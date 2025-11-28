@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>iMedia Arcade Revision</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>iMedia Arcade Revision</h1>
+      <p class="subtitle">
+        Pick a topic or play <strong>All Topics</strong>, build your multiplier, and climb the leaderboard.
+      </p>
+    </header>
+
+    <section class="setup-card card">
+      <div class="field-row">
+        <label for="playerName">Name:</label>
+        <input id="playerName" type="text" placeholder="Enter your name" />
+      </div>
+
+      <div class="field-row">
+        <label for="topicSelect">Topic:</label>
+        <select id="topicSelect"></select>
+      </div>
+
+      <button id="startBtn" class="btn primary">Start Game</button>
+    </section>
+
+    <section id="gameSection" class="card game-card hidden">
+      <div class="hud">
+        <div>Topic: <span id="topicLabel"></span></div>
+        <div>Score: <span id="scoreDisplay">0</span></div>
+        <div>Multiplier: <span id="multiplierDisplay">x1</span></div>
+        <div>Lives: <span id="livesDisplay">3</span></div>
+      </div>
+
+      <div id="questionCard" class="question-card">
+        <div id="questionText" class="question-text">Press Start to begin</div>
+        <div id="answersContainer" class="answers"></div>
+        <div id="feedback" class="feedback"></div>
+      </div>
+    </section>
+
+    <section id="gameOverPanel" class="card game-over hidden">
+      <h2>Game Over</h2>
+      <p>Your final score: <span id="finalScore">0</span></p>
+      <p>Topic: <span id="lastGameTopic"></span></p>
+      <button id="restartBtn" class="btn">Play Again</button>
+    </section>
+
+    <section class="card leaderboard-card">
+      <h2>Leaderboards</h2>
+      <div class="leaderboard-tabs">
+        <button class="lb-tab active" data-period="all">All Time</button>
+        <button class="lb-tab" data-period="week">This Week</button>
+        <button class="lb-tab" data-period="today">Today</button>
+      </div>
+      <div class="leaderboard-layout">
+        <div class="leaderboard-list">
+          <h3 id="leaderboardTitle">All Time Top Scores</h3>
+          <div id="leaderboardContainer" class="leaderboard-table"></div>
+        </div>
+        <div class="leaderboard-topic">
+          <h3>Per-Topic Champions</h3>
+          <div id="topicLeaderboardContainer" class="leaderboard-table small"></div>
+        </div>
+      </div>
+      <p class="leaderboard-note">
+        Scores are saved via Google Sheets (Apps Script). If you don't see data yet, your teacher may still be wiring it up.
+      </p>
+    </section>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
