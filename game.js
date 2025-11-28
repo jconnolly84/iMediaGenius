@@ -1,3 +1,4 @@
+// Simple Google Apps Script endpoint
 const GAS_URL = "https://script.google.com/macros/s/AKfycbwRxNSJ7fY_97txC7B4d_Tklzm373d-Bi1TBj3N4M_2DBONDAgDhviIJWT1nouZkMborA/exec";
 const TOPICS = window.TOPICS || {};
 
@@ -20,7 +21,7 @@ const finalScoreEl = document.getElementById("finalScore");
 const lastGameTopicEl = document.getElementById("lastGameTopic");
 const restartBtn = document.getElementById("restartBtn");
 
-// Leaderboard
+// Leaderboard DOM (will just show a static message for now)
 const leaderboardTabs = Array.from(document.querySelectorAll(".lb-tab"));
 const leaderboardTitle = document.getElementById("leaderboardTitle");
 const leaderboardContainer = document.getElementById("leaderboardContainer");
@@ -156,117 +157,51 @@ function endGame() {
   lastGameTopicEl.textContent = getTopicLabel(currentTopicKey);
 
   const name = (playerNameInput.value || "Anonymous").trim();
-  submitScore(name, currentTopicKey, score, currentQuestions.length)
-    .then(() => {
-      loadLeaderboard(currentPeriod);
-      loadTopicLeaderboard();
-    })
-    .catch(() => {});
+  // Fire-and-forget: log score via simple GET so CORS doesn't block it
+  submitScore(name, currentTopicKey, score, currentQuestions.length);
 }
 
-// ---------- Leaderboard communication ----------
-let currentPeriod = "all";
+// ---------- Score logging (no CORS readback) ----------
 
-async function submitScore(name, topicKey, score, questionsPlayed) {
+// Uses a tracking-pixel-style GET request. Browser doesn't care about CORS
+// because we never read the response; we just let Google log it.
+function submitScore(name, topicKey, score, questionsPlayed) {
   try {
-    const formData = new URLSearchParams();
-    formData.append("action", "submitScore");
-    formData.append("name", name);
-    formData.append("topic", topicKey);
-    formData.append("score", String(score));
-    formData.append("questionsPlayed", String(questionsPlayed));
-    formData.append("timestamp", new Date().toISOString());
+    const params = new URLSearchParams();
+    params.append("action", "submitScore");
+    params.append("name", name);
+    params.append("topic", topicKey);
+    params.append("score", String(score));
+    params.append("questionsPlayed", String(questionsPlayed));
+    params.append("timestamp", new Date().toISOString());
 
-    await fetch(GAS_URL, {
-      method: "POST",
-      body: formData
+    const img = new Image();
+    img.src = GAS_URL + "?" + params.toString();
+  } catch (err) {
+    console.error("Error creating score beacon:", err);
+  }
+}
+
+// ---------- Leaderboard UI (static message for now) ----------
+
+function initLeaderboardsStatic() {
+  leaderboardTitle.textContent = "All Time Top Scores";
+  leaderboardContainer.innerHTML =
+    "<p class='leaderboard-note'>Scores are being recorded in your Google Sheet (Sheet1). " +
+    "Open the sheet to see full all-time / weekly / topic champions. " +
+    "We can wire live leaderboards later if needed.</p>";
+
+  topicLeaderboardContainer.innerHTML =
+    "<p class='leaderboard-note'>Per-topic champions are visible in the sheet (filter by Topic ID).</p>";
+}
+
+function setupLeaderboardTabs() {
+  leaderboardTabs.forEach(btn => {
+    btn.addEventListener("click", () => {
+      leaderboardTabs.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
     });
-  } catch (err) {
-    console.error("Error submitting score:", err);
-  }
-}
-
-async function loadLeaderboard(period = "all") {
-  try {
-    const url = GAS_URL + "?action=getLeaderboard&period=" + encodeURIComponent(period);
-    const res = await fetch(url);
-    if (!res.ok) throw new Error("HTTP " + res.status);
-    const data = await res.json();
-
-    renderLeaderboard(data || [], leaderboardContainer);
-    const label = period === "today" ? "Today" : period === "week" ? "This Week" : "All Time";
-    leaderboardTitle.textContent = label + " Top Scores";
-  } catch (err) {
-    console.error("Error loading leaderboard:", err);
-    leaderboardContainer.innerHTML = "<p class='leaderboard-note'>Could not load leaderboard yet.</p>";
-  }
-}
-
-async function loadTopicLeaderboard() {
-  try {
-    const url = GAS_URL + "?action=getTopicChampions";
-    const res = await fetch(url);
-    if (!res.ok) throw new Error("HTTP " + res.status);
-    const data = await res.json();
-    renderTopicLeaderboard(data || [], topicLeaderboardContainer);
-  } catch (err) {
-    console.error("Error loading topic leaderboard:", err);
-    topicLeaderboardContainer.innerHTML = "<p class='leaderboard-note'>Topic champions not available yet.</p>";
-  }
-}
-
-function renderLeaderboard(rows, container) {
-  if (!Array.isArray(rows) || rows.length === 0) {
-    container.innerHTML = "<p class='leaderboard-note'>No scores yet. Be the first!</p>";
-    return;
-  }
-
-  const limited = rows.slice(0, 20);
-  const html = [
-    "<div class='leaderboard-row header'><span>#</span><span>Name</span><span>Topic</span><span>Score</span></div>",
-    ...limited.map((row, idx) => {
-      const rank = idx + 1;
-      const name = row.name || "Unknown";
-      const topic = getTopicLabel(row.topic || row.topicId || "all");
-      const score = row.score ?? 0;
-      return `<div class="leaderboard-row"><span>${rank}</span><span>${escapeHtml(
-        name
-      )}</span><span>${escapeHtml(topic)}</span><span>${score}</span></div>`;
-    })
-  ].join("");
-
-  container.innerHTML = html;
-}
-
-function renderTopicLeaderboard(rows, container) {
-  if (!Array.isArray(rows) || rows.length === 0) {
-    container.innerHTML = "<p class='leaderboard-note'>No topic champions yet.</p>";
-    return;
-  }
-
-  const html = [
-    "<div class='leaderboard-row header'><span>#</span><span>Topic</span><span>Name</span><span>Score</span></div>",
-    ...rows.map((row, idx) => {
-      const rank = idx + 1;
-      const topic = getTopicLabel(row.topic || row.topicId || "all");
-      const name = row.name || "Unknown";
-      const score = row.score ?? 0;
-      return `<div class="leaderboard-row"><span>${rank}</span><span>${escapeHtml(
-        topic
-      )}</span><span>${escapeHtml(name)}</span><span>${score}</span></div>`;
-    })
-  ].join("");
-
-  container.innerHTML = html;
-}
-
-function escapeHtml(text) {
-  return String(text)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
+  });
 }
 
 // ---------- UI wiring ----------
@@ -304,22 +239,10 @@ function restartGameHandler() {
   gameSection.classList.add("hidden");
 }
 
-function setupLeaderboardTabs() {
-  leaderboardTabs.forEach(btn => {
-    btn.addEventListener("click", () => {
-      leaderboardTabs.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      currentPeriod = btn.dataset.period || "all";
-      loadLeaderboard(currentPeriod);
-    });
-  });
-}
-
 // ---------- Init ----------
 populateTopicSelect();
 setupLeaderboardTabs();
-loadLeaderboard("all");
-loadTopicLeaderboard();
+initLeaderboardsStatic();
 
 startBtn.addEventListener("click", startGameHandler);
 restartBtn.addEventListener("click", restartGameHandler);
