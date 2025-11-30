@@ -1,8 +1,13 @@
-// iMedia Arcade Revision - Game Logic with Google Sheets logging + live leaderboard + SFX
+// iMedia Arcade Revision - Game Logic with Google Sheets logging + leaderboard from public sheet + SFX
 
-// === CONFIG: Google Apps Script endpoint (score logger + leaderboard) ===
+// === CONFIG ===
+// Apps Script endpoint (write-only: logs scores into your sheet)
 const GAS_URL =
   "https://script.google.com/macros/s/AKfycbzrw-GfhZm1Lxtm4kUHqUmUV1rzYbBRJ875twjme9SObdLeNu9AwzwerrM70N9YiLTKCg/exec";
+
+// Google Sheet ID (read-only: public "Anyone with link can view")
+const SHEET_ID = "10HJ2Az6GC8m-QFoibX-X0-izyszocRhzgfizY9bwoGg";
+
 const TOPICS = window.TOPICS || {};
 
 // === DOM REFERENCES ===
@@ -43,7 +48,7 @@ function initSfx() {
     sfxStart = new Audio("sfx-start.mp3");
     sfxGameOver = new Audio("sfx-gameover.mp3");
 
-    [sfxCorrect, sfxWrong, sfxStart, sfxGameOver].forEach(a => {
+    [sfxCorrect, sfxWrong, sfxStart, sfxGameOver].forEach((a) => {
       if (!a) return;
       a.volume = 0.5;
     });
@@ -92,7 +97,7 @@ function buildQuestionSet(topicKey) {
   if (topicKey === "all") {
     const all = [];
     Object.entries(TOPICS).forEach(([key, t]) => {
-      t.questions.forEach(q => {
+      t.questions.forEach((q) => {
         all.push({ ...q, __topicKey: key });
       });
     });
@@ -100,7 +105,7 @@ function buildQuestionSet(topicKey) {
   } else {
     const t = TOPICS[topicKey];
     if (!t) return [];
-    const qs = t.questions.map(q => ({ ...q, __topicKey: topicKey }));
+    const qs = t.questions.map((q) => ({ ...q, __topicKey: topicKey }));
     return shuffle(qs);
   }
 }
@@ -149,7 +154,7 @@ function showQuestion() {
 function handleAnswer(correct, clickedBtn) {
   // disable all buttons for this question
   const buttons = Array.from(answersContainer.querySelectorAll("button"));
-  buttons.forEach(b => (b.disabled = true));
+  buttons.forEach((b) => (b.disabled = true));
 
   const q = currentQuestions[index];
   buttons.forEach((b, i) => {
@@ -203,9 +208,11 @@ function endGame() {
 
   playSfx(sfxGameOver);
 
+  // refresh leaderboard shortly after saving
+  setTimeout(loadLeaderboardFromSheet, 800);
 }
 
-// === SCORE LOGGING (fire-and-forget GET) ===
+// === SCORE LOGGING (fire-and-forget GET via Apps Script) ===
 function submitScore(name, topicKey, score, questionsPlayed) {
   try {
     const params = new URLSearchParams();
@@ -224,80 +231,115 @@ function submitScore(name, topicKey, score, questionsPlayed) {
   }
 }
 
-// === LEADERBOARD LOADING & RENDERING (JSONP) ===
+// === LEADERBOARD FROM PUBLIC SHEET (Google Visualization API) ===
 
-// JSONP callback that Apps Script will call with an array of scores
-function renderLeaderboardFromScript(entries) {
-  if (!entries || !entries.length) {
+// Called by Google's gviz endpoint
+function renderLeaderboardFromSheet(response) {
+  try {
+    const table = response.table;
+    const rows = table.rows || [];
+
+    const entries = [];
+    for (let i = 0; i < rows.length; i++) {
+      const r = rows[i].c;
+      const name = (r[0] && r[0].v) || "";
+      if (!name || name.toLowerCase() === "name") continue; // skip header row
+
+      const score = (r[1] && r[1].v) || 0;
+      const topicLabel = (r[2] && r[2].v) || "";
+      const topicId = (r[3] && r[3].v) || "";
+      const timestamp = (r[4] && r[4].v) || "";
+
+      entries.push({
+        name,
+        score,
+        topicLabel,
+        topicId,
+        timestamp,
+      });
+    }
+
+    if (!entries.length) {
+      leaderboardContainer.innerHTML =
+        "<p class='leaderboard-note'>No scores yet. Play a game to be the first on the board!</p>";
+      return;
+    }
+
+    const rowsHtml = entries
+      .map((e, i) => {
+        const place = i + 1;
+        const topic = e.topicLabel || e.topicId || "All Topics";
+        const name = e.name || "Anonymous";
+        return `
+          <tr>
+            <td>${place}</td>
+            <td>${name}</td>
+            <td>${e.score}</td>
+            <td>${topic}</td>
+          </tr>`;
+      })
+      .join("");
+
+    leaderboardContainer.innerHTML = `
+      <table class="leaderboard-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Score</th>
+            <th>Topic</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rowsHtml}
+        </tbody>
+      </table>`;
+  } catch (err) {
+    console.error("Error rendering leaderboard:", err);
     leaderboardContainer.innerHTML =
-      "<p class='leaderboard-note'>No scores yet. Play a game to be the first on the board!</p>";
-    return;
+      "<p class='leaderboard-note'>Couldn't load leaderboard. Check sheet sharing or try again.</p>";
   }
-
-  const rowsHtml = entries
-    .map((e, i) => {
-      const place = i + 1;
-      const topic = e.topicLabel || e.topicId || "All Topics";
-      const name = e.name || "Anonymous";
-      return `
-        <tr>
-          <td>${place}</td>
-          <td>${name}</td>
-          <td>${e.score}</td>
-          <td>${topic}</td>
-        </tr>`;
-    })
-    .join("");
-
-  leaderboardContainer.innerHTML = `
-    <table class="leaderboard-table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>Score</th>
-          <th>Topic</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${rowsHtml}
-      </tbody>
-    </table>`;
 }
 
-// JSONP loader – adds a <script> tag pointing at your Apps Script
-function loadLeaderboard() {
+// Load data from the public sheet using Google's Visualization API (JSONP)
+function loadLeaderboardFromSheet() {
   leaderboardContainer.innerHTML =
     "<p class='leaderboard-note'>Loading leaderboard...</p>";
 
-  const callbackName = "renderLeaderboardFromScript";
-  const script = document.createElement("script");
-  script.src =
-    GAS_URL +
-    "?action=getTopScores&limit=10&callback=" +
+  const tq = encodeURIComponent(
+    "select A,B,C,D,F order by B desc limit 10"
+  ); // A=name, B=score, C=topicLabel, D=topicId, F=timestamp
+
+  const callbackName = "renderLeaderboardFromSheet";
+  const url =
+    "https://docs.google.com/spreadsheets/d/" +
+    SHEET_ID +
+    "/gviz/tq?sheet=Sheet1&tq=" +
+    tq +
+    "&tqx=responseHandler:" +
     callbackName +
     "&_=" +
     Date.now(); // cache-buster
+
+  const script = document.createElement("script");
+  script.src = url;
   document.body.appendChild(script);
 }
 
-// === STATIC TEXT + TABS ===
-function initLeaderboardsStatic() {
-  leaderboardTitle.textContent = "All Time Top Scores";
-  // leaderboardContainer is filled by loadLeaderboard()
-  topicLeaderboardContainer.innerHTML =
-    "<p class='leaderboard-note'>Per-topic champions are visible in the sheet (filter by Topic ID).</p>";
-}
-
+// === TABS & STATIC TEXT ===
 function setupLeaderboardTabs() {
-  leaderboardTabs.forEach(btn => {
-    btn.addEventListener("click", () => {
-      leaderboardTabs.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
+  leaderboardTitle.textContent = "All Time Top Scores";
+  if (topicLeaderboardContainer) {
+    topicLeaderboardContainer.innerHTML =
+      "<p class='leaderboard-note'>Per-topic champions are visible in the sheet (filter by Topic ID).</p>";
+  }
 
-      // For now, all tabs show same top-10 list.
-      // Later we can pass extra filters (week/today) via query params.
-      loadLeaderboard();
+  leaderboardTabs.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      leaderboardTabs.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      // For now, all three tabs reload the same global top-10 list
+      loadLeaderboardFromSheet();
     });
   });
 }
@@ -341,8 +383,8 @@ function restartGameHandler() {
 // === INIT ===
 populateTopicSelect();
 setupLeaderboardTabs();
-initLeaderboardsStatic();
 initSfx();
+loadLeaderboardFromSheet();
 
 startBtn.addEventListener("click", startGameHandler);
 restartBtn.addEventListener("click", restartGameHandler);
