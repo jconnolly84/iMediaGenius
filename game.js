@@ -24,6 +24,9 @@ const questionText = document.getElementById("questionText");
 const answersContainer = document.getElementById("answersContainer");
 const feedbackEl = document.getElementById("feedback");
 const questionCard = document.getElementById("questionCard");
+const timerBar = document.getElementById("timerBar");
+const timerLabel = document.getElementById("timerLabel");
+const scorePopEl = document.getElementById("scorePop");
 
 const gameOverPanel = document.getElementById("gameOverPanel");
 const finalScoreEl = document.getElementById("finalScore");
@@ -34,11 +37,8 @@ const restartBtn = document.getElementById("restartBtn");
 const leaderboardTabs = Array.from(document.querySelectorAll(".lb-tab"));
 const leaderboardTitle = document.getElementById("leaderboardTitle");
 const leaderboardContainer = document.getElementById("leaderboardContainer");
-const topicLeaderboardContainer = document.getElementById("topicLeaderboardContainer");
 
 // === SOUND EFFECTS ===
-// These expect audio files to exist in the same folder as index.html
-// (or update the filenames below to match your assets)
 let sfxCorrect, sfxWrong, sfxStart, sfxGameOver;
 
 function initSfx() {
@@ -76,6 +76,11 @@ let lives = 3;
 let index = 0;
 const MAX_MULTIPLIER = 5;
 
+const QUESTION_TIME_MS = 15000; // 15s per question
+let questionEndTime = 0;
+let questionTimerHandle = null;
+let questionResolved = false;
+
 // === UTILS ===
 function shuffle(array) {
   const arr = array.slice();
@@ -86,17 +91,99 @@ function shuffle(array) {
   return arr;
 }
 
-function getTopicLabel(key) {
-  if (key === "all") return "All Topics";
-  const topic = TOPICS[key];
-  return topic ? topic.label : key;
+// === TIMER & HUD FX ===
+function stopQuestionTimer() {
+  if (questionTimerHandle) {
+    cancelAnimationFrame(questionTimerHandle);
+    questionTimerHandle = null;
+  }
+  if (timerBar) {
+    timerBar.classList.remove("timer-active");
+  }
 }
 
-// Build a flat question list. For "all", mix from every topic.
+function startQuestionTimer() {
+  if (!timerBar) return;
+  stopQuestionTimer();
+  const startTime = performance.now();
+  questionEndTime = Date.now() + QUESTION_TIME_MS;
+  timerBar.style.width = "100%";
+  timerBar.classList.add("timer-active");
+
+  function tick(now) {
+    if (questionResolved) {
+      stopQuestionTimer();
+      return;
+    }
+    const elapsed = now - startTime;
+    const remaining = Math.max(0, QUESTION_TIME_MS - elapsed);
+    const ratio = remaining / QUESTION_TIME_MS;
+    timerBar.style.width = (ratio * 100).toFixed(1) + "%";
+
+    if (remaining <= 0) {
+      questionTimerHandle = null;
+      handleTimeout();
+    } else {
+      questionTimerHandle = requestAnimationFrame(tick);
+    }
+  }
+
+  questionTimerHandle = requestAnimationFrame(tick);
+}
+
+function renderLives() {
+  if (!livesDisplay) return;
+  const maxLives = 3;
+  const hearts = [];
+  for (let i = 0; i < maxLives; i++) {
+    hearts.push(i < lives ? "♥" : "✖");
+  }
+  livesDisplay.textContent = hearts.join(" ");
+}
+
+function pulseStat(el) {
+  if (!el) return;
+  el.classList.remove("stat-pulse");
+  void el.offsetWidth;
+  el.classList.add("stat-pulse");
+}
+
+function updateMultiplierHeat() {
+  if (!multiplierDisplay) return;
+  if (multiplier >= 4) {
+    multiplierDisplay.classList.add("multiplier-hot");
+  } else {
+    multiplierDisplay.classList.remove("multiplier-hot");
+  }
+}
+
+function showScorePop(text) {
+  if (!scorePopEl) return;
+  scorePopEl.textContent = text;
+  scorePopEl.classList.remove("hidden", "score-pop-anim");
+  void scorePopEl.offsetWidth;
+  scorePopEl.classList.add("score-pop-anim");
+  setTimeout(() => {
+    scorePopEl.classList.add("hidden");
+  }, 750);
+}
+
+function getTopicLabel(key) {
+  if (key === "all") return "All Topics";
+  const t = TOPICS[key];
+  return t ? t.label : key;
+}
+
+// Build a flat question list.
 function buildQuestionSet(topicKey) {
+  if (!TOPICS || Object.keys(TOPICS).length === 0) {
+    return [];
+  }
+
   if (topicKey === "all") {
     const all = [];
-    Object.entries(TOPICS).forEach(([key, t]) => {
+    Object.keys(TOPICS).forEach((key) => {
+      const t = TOPICS[key];
       t.questions.forEach((q) => {
         all.push({ ...q, __topicKey: key });
       });
@@ -118,13 +205,19 @@ function resetGameState(topicKey) {
   multiplier = 1;
   lives = 3;
   index = 0;
+  questionResolved = false;
+  stopQuestionTimer();
 
   scoreDisplay.textContent = score.toString();
   multiplierDisplay.textContent = "x" + multiplier;
-  livesDisplay.textContent = lives.toString();
+  updateMultiplierHeat();
+  renderLives();
   feedbackEl.textContent = "";
   feedbackEl.className = "feedback";
   topicLabel.textContent = getTopicLabel(topicKey);
+  if (timerLabel) {
+    timerLabel.textContent = "Answer quickly for more points!";
+  }
 
   questionCard.classList.remove("flash-correct", "flash-wrong");
 }
@@ -136,43 +229,68 @@ function showQuestion() {
   }
 
   const q = currentQuestions[index];
+  questionResolved = false;
+
   questionText.textContent = q.q;
   answersContainer.innerHTML = "";
   feedbackEl.textContent = "";
   feedbackEl.className = "feedback";
   questionCard.classList.remove("flash-correct", "flash-wrong");
 
-  q.options.forEach((opt, i) => {
+  const optionObjects = q.options.map((text, i) => ({
+    text,
+    isCorrect: i === q.answerIndex,
+  }));
+
+  const shuffledOptions = shuffle(optionObjects);
+
+  shuffledOptions.forEach((optObj) => {
     const btn = document.createElement("button");
     btn.className = "answer-btn";
-    btn.textContent = opt;
-    btn.addEventListener("click", () => handleAnswer(i === q.answerIndex, btn));
+    btn.textContent = optObj.text;
+    btn.dataset.correct = optObj.isCorrect ? "true" : "false";
+    btn.addEventListener("click", () => handleAnswer(optObj.isCorrect, btn));
     answersContainer.appendChild(btn);
   });
+
+  startQuestionTimer();
 }
 
 function handleAnswer(correct, clickedBtn) {
-  // disable all buttons for this question
+  if (questionResolved) return;
+  questionResolved = true;
+  stopQuestionTimer();
+
   const buttons = Array.from(answersContainer.querySelectorAll("button"));
   buttons.forEach((b) => (b.disabled = true));
-
-  const q = currentQuestions[index];
-  buttons.forEach((b, i) => {
-    if (i === q.answerIndex) {
+  buttons.forEach((b) => {
+    if (b.dataset.correct === "true") {
       b.classList.add("correct");
     }
   });
 
   if (correct) {
-    clickedBtn.classList.add("correct");
-    feedbackEl.textContent = "Correct! +" + 100 * multiplier;
-    feedbackEl.className = "feedback correct";
-    score += 100 * multiplier;
+    if (clickedBtn) {
+      clickedBtn.classList.add("correct");
+    }
+    const remaining = Math.max(0, questionEndTime - Date.now());
+    const ratio = QUESTION_TIME_MS > 0 ? remaining / QUESTION_TIME_MS : 0;
+    const timeBonusMultiplier = 0.4 + ratio * 0.6;
+    const basePoints = 100 * multiplier;
+    const points = Math.max(10, Math.round(basePoints * timeBonusMultiplier));
+
+    score += points;
     multiplier = Math.min(MAX_MULTIPLIER, multiplier + 1);
+
+    feedbackEl.textContent = "Correct! +" + points;
+    feedbackEl.className = "feedback correct";
     playSfx(sfxCorrect);
     questionCard.classList.add("flash-correct");
+    showScorePop("+" + points);
   } else {
-    clickedBtn.classList.add("wrong");
+    if (clickedBtn) {
+      clickedBtn.classList.add("wrong");
+    }
     feedbackEl.textContent = "Wrong! Multiplier reset.";
     feedbackEl.className = "feedback wrong";
     lives -= 1;
@@ -183,7 +301,49 @@ function handleAnswer(correct, clickedBtn) {
 
   scoreDisplay.textContent = score.toString();
   multiplierDisplay.textContent = "x" + multiplier;
-  livesDisplay.textContent = lives.toString();
+  updateMultiplierHeat();
+  renderLives();
+  pulseStat(scoreDisplay);
+  pulseStat(multiplierDisplay);
+
+  index += 1;
+
+  setTimeout(() => {
+    if (lives <= 0 || index >= currentQuestions.length) {
+      endGame();
+    } else {
+      showQuestion();
+    }
+  }, 900);
+}
+
+function handleTimeout() {
+  if (questionResolved) return;
+  questionResolved = true;
+  stopQuestionTimer();
+
+  const buttons = Array.from(answersContainer.querySelectorAll("button"));
+  buttons.forEach((b) => {
+    b.disabled = true;
+    if (b.dataset.correct === "true") {
+      b.classList.add("correct");
+    }
+  });
+
+  feedbackEl.textContent = "Out of time! Multiplier reset.";
+  feedbackEl.className = "feedback wrong";
+
+  lives -= 1;
+  multiplier = 1;
+
+  playSfx(sfxWrong);
+  questionCard.classList.add("flash-wrong");
+
+  scoreDisplay.textContent = score.toString();
+  multiplierDisplay.textContent = "x" + multiplier;
+  updateMultiplierHeat();
+  renderLives();
+  pulseStat(multiplierDisplay);
 
   index += 1;
 
@@ -197,6 +357,9 @@ function handleAnswer(correct, clickedBtn) {
 }
 
 function endGame() {
+  stopQuestionTimer();
+  questionResolved = true;
+
   gameSection.classList.add("hidden");
   gameOverPanel.classList.remove("hidden");
 
@@ -208,18 +371,17 @@ function endGame() {
 
   playSfx(sfxGameOver);
 
-  // refresh leaderboard shortly after saving
   setTimeout(loadLeaderboardFromSheet, 800);
 }
 
 // === SCORE LOGGING (fire-and-forget GET via Apps Script) ===
-function submitScore(name, topicKey, score, questionsPlayed) {
+function submitScore(name, topicKey, scoreValue, questionsPlayed) {
   try {
     const params = new URLSearchParams();
     params.append("action", "submitScore");
     params.append("name", name);
     params.append("topic", topicKey);
-    params.append("score", String(score));
+    params.append("score", String(scoreValue));
     params.append("questionsPlayed", String(questionsPlayed));
     params.append("timestamp", new Date().toISOString());
 
@@ -232,8 +394,6 @@ function submitScore(name, topicKey, score, questionsPlayed) {
 }
 
 // === LEADERBOARD FROM PUBLIC SHEET (Google Visualization API) ===
-
-// Called by Google's gviz endpoint
 function renderLeaderboardFromSheet(response) {
   try {
     const table = response.table;
@@ -243,20 +403,14 @@ function renderLeaderboardFromSheet(response) {
     for (let i = 0; i < rows.length; i++) {
       const r = rows[i].c;
       const name = (r[0] && r[0].v) || "";
-      if (!name || name.toLowerCase() === "name") continue; // skip header row
+      if (!name || name.toLowerCase() === "name") continue;
 
       const score = (r[1] && r[1].v) || 0;
       const topicLabel = (r[2] && r[2].v) || "";
       const topicId = (r[3] && r[3].v) || "";
       const timestamp = (r[4] && r[4].v) || "";
 
-      entries.push({
-        name,
-        score,
-        topicLabel,
-        topicId,
-        timestamp,
-      });
+      entries.push({ name, score, topicLabel, topicId, timestamp });
     }
 
     if (!entries.length) {
@@ -264,6 +418,8 @@ function renderLeaderboardFromSheet(response) {
         "<p class='leaderboard-note'>No scores yet. Play a game to be the first on the board!</p>";
       return;
     }
+
+    entries.sort((a, b) => b.score - a.score);
 
     const rowsHtml = entries
       .map((e, i) => {
@@ -301,7 +457,6 @@ function renderLeaderboardFromSheet(response) {
   }
 }
 
-// Load data from the public sheet using Google's Visualization API (JSONP)
 function loadLeaderboardFromSheet() {
   leaderboardContainer.innerHTML =
     "<p class='leaderboard-note'>Loading leaderboard...</p>";
@@ -319,7 +474,7 @@ function loadLeaderboardFromSheet() {
     "&tqx=responseHandler:" +
     callbackName +
     "&_=" +
-    Date.now(); // cache-buster
+    Date.now();
 
   const script = document.createElement("script");
   script.src = url;
@@ -328,40 +483,48 @@ function loadLeaderboardFromSheet() {
 
 // === TABS & STATIC TEXT ===
 function setupLeaderboardTabs() {
-  leaderboardTitle.textContent = "All Time Top Scores";
-  if (topicLeaderboardContainer) {
-    topicLeaderboardContainer.innerHTML =
-      "<p class='leaderboard-note'>Per-topic champions are visible in the sheet (filter by Topic ID).</p>";
-  }
-
   leaderboardTabs.forEach((btn) => {
     btn.addEventListener("click", () => {
       leaderboardTabs.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
-      // For now, all three tabs reload the same global top-10 list
-      loadLeaderboardFromSheet();
+
+      const tab = btn.dataset.tab;
+      if (tab === "all") {
+        leaderboardTitle.textContent = "Leaderboards – All Time";
+      } else if (tab === "week") {
+        leaderboardTitle.textContent = "Leaderboards – This Week (visual only)";
+      } else if (tab === "today") {
+        leaderboardTitle.textContent = "Leaderboards – Today (visual only)";
+      }
     });
   });
 }
 
-// === UI WIRING ===
+// === TOPIC SELECT ===
 function populateTopicSelect() {
+  topicSelect.innerHTML = "";
+
   const allOption = document.createElement("option");
   allOption.value = "all";
-  allOption.textContent = "All Topics (mixed)";
+  allOption.textContent = "All Topics – Random Mix";
   topicSelect.appendChild(allOption);
 
-  Object.entries(TOPICS).forEach(([key, t]) => {
+  Object.keys(TOPICS).forEach((key) => {
     const opt = document.createElement("option");
     opt.value = key;
-    opt.textContent = t.label || key;
+    opt.textContent = TOPICS[key].label || key;
     topicSelect.appendChild(opt);
   });
-
-  topicSelect.value = "all";
 }
 
+// === START / RESTART HANDLERS ===
 function startGameHandler() {
+  const name = (playerNameInput.value || "").trim();
+  if (!name) {
+    alert("Please enter your name so we can log your score!");
+    return;
+  }
+
   const topicKey = topicSelect.value || "all";
   if (!Object.keys(TOPICS).length) {
     alert("Topic data not loaded – check questions.js.");
