@@ -203,8 +203,6 @@ function endGame() {
 
   playSfx(sfxGameOver);
 
-  // refresh leaderboard shortly after saving
-  setTimeout(loadLeaderboard, 800);
 }
 
 // === SCORE LOGGING (fire-and-forget GET) ===
@@ -345,7 +343,6 @@ populateTopicSelect();
 setupLeaderboardTabs();
 initLeaderboardsStatic();
 initSfx();
-loadLeaderboard();
 
 startBtn.addEventListener("click", startGameHandler);
 restartBtn.addEventListener("click", restartGameHandler);

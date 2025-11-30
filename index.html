@@ -9,67 +9,90 @@
 <body>
   <div class="app">
     <header class="app-header">
-      <h1>iMedia Arcade Revision</h1>
+      <h1>IMEDIA ARCADE REVISION</h1>
       <p class="subtitle">
         Pick a topic or play <strong>All Topics</strong>, build your multiplier, and climb the leaderboard.
       </p>
     </header>
 
-    <section class="setup-card card">
+    <!-- SETUP BAR -->
+    <section class="card setup-card">
       <div class="field-row">
         <label for="playerName">Name:</label>
-        <input id="playerName" type="text" placeholder="Enter your name" />
+        <input id="playerName" type="text" placeholder="Type your name" />
       </div>
-
       <div class="field-row">
         <label for="topicSelect">Topic:</label>
         <select id="topicSelect"></select>
       </div>
-
       <button id="startBtn" class="btn primary">Start Game</button>
     </section>
 
+    <!-- GAME AREA -->
     <section id="gameSection" class="card game-card hidden">
       <div class="hud">
-        <div>Topic: <span id="topicLabel"></span></div>
+        <div>Topic: <span id="topicLabel">All Topics</span></div>
         <div>Score: <span id="scoreDisplay">0</span></div>
         <div>Multiplier: <span id="multiplierDisplay">x1</span></div>
         <div>Lives: <span id="livesDisplay">3</span></div>
       </div>
 
       <div id="questionCard" class="question-card">
-        <div id="questionText" class="question-text">Press Start to begin</div>
+        <div id="questionText" class="question-text">
+          Press <strong>Start Game</strong> to begin.
+        </div>
         <div id="answersContainer" class="answers"></div>
         <div id="feedback" class="feedback"></div>
       </div>
     </section>
 
+    <!-- GAME OVER PANEL -->
     <section id="gameOverPanel" class="card game-over hidden">
       <h2>Game Over</h2>
-      <p>Your final score: <span id="finalScore">0</span></p>
-      <p>Topic: <span id="lastGameTopic"></span></p>
+      <p>Your final score: <strong id="finalScore">0</strong></p>
+      <p>Topic: <span id="lastGameTopic">All Topics</span></p>
       <button id="restartBtn" class="btn">Play Again</button>
     </section>
 
+    <!-- LEADERBOARD SECTION -->
     <section class="card leaderboard-card">
-      <h2>Leaderboards</h2>
-      <div class="leaderboard-tabs">
-        <button class="lb-tab active" data-period="all">All Time</button>
-        <button class="lb-tab" data-period="week">This Week</button>
-        <button class="lb-tab" data-period="today">Today</button>
+      <div class="leaderboard-header">
+        <h2 id="leaderboardTitle">Leaderboards</h2>
+        <div class="leaderboard-tabs">
+          <button class="lb-tab active" data-tab="all">All Time</button>
+          <button class="lb-tab" data-tab="week">This Week</button>
+          <button class="lb-tab" data-tab="today">Today</button>
+        </div>
       </div>
+
       <div class="leaderboard-layout">
         <div class="leaderboard-list">
-          <h3 id="leaderboardTitle">All Time Top Scores</h3>
-          <div id="leaderboardContainer" class="leaderboard-table"></div>
+          <h3>All Time Top Scores</h3>
+          <div id="leaderboardContainer">
+            <!-- Embedded Google Sheet showing the scores -->
+            <iframe
+              src="https://docs.google.com/spreadsheets/d/10HJ2Az6GC8m-QFoibX-X0-izyszocRhzgfizY9bwoGg/edit?rm=minimal&single=true&widget=true&headers=false"
+              style="width:100%; height:260px; border:0; border-radius:12px; background:#050815;"
+              loading="lazy"
+            ></iframe>
+          </div>
+          <p class="leaderboard-note">
+            This live sheet updates automatically when you finish a game.
+          </p>
         </div>
+
         <div class="leaderboard-topic">
           <h3>Per-Topic Champions</h3>
-          <div id="topicLeaderboardContainer" class="leaderboard-table small"></div>
+          <div id="topicLeaderboardContainer" class="leaderboard-table small">
+            <p class="leaderboard-note">
+              Filter the Google Sheet by topic to see champions for each area.
+            </p>
+          </div>
         </div>
       </div>
       <p class="leaderboard-note">
-        Scores are saved via Google Sheets (Apps Script). If you don't see data yet, your teacher may still be wiring it up.
+        Scores are saved via Google Sheets (Apps Script). If you don't see data yet, check that the sheet
+        is shared as <em>Anyone with the link can view</em> or is published to the web.
       </p>
     </section>
   </div>
