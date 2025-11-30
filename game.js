@@ -1,8 +1,11 @@
-// Simple Google Apps Script endpoint
-const GAS_URL = "https://script.google.com/macros/s/AKfycbwRxNSJ7fY_97txC7B4d_Tklzm373d-Bi1TBj3N4M_2DBONDAgDhviIJWT1nouZkMborA/exec";
+// iMedia Arcade Revision - Game Logic with Google Sheets logging + live leaderboard + SFX
+
+// === CONFIG: Google Apps Script endpoint (score logger + leaderboard) ===
+const GAS_URL =
+  "https://script.google.com/macros/s/AKfycbzrw-GfhZm1Lxtm4kUHqUmUV1rzYbBRJ875twjme9SObdLeNu9AwzwerrM70N9YiLTKCg/exec";
 const TOPICS = window.TOPICS || {};
 
-// DOM references
+// === DOM REFERENCES ===
 const playerNameInput = document.getElementById("playerName");
 const topicSelect = document.getElementById("topicSelect");
 const startBtn = document.getElementById("startBtn");
@@ -15,19 +18,51 @@ const livesDisplay = document.getElementById("livesDisplay");
 const questionText = document.getElementById("questionText");
 const answersContainer = document.getElementById("answersContainer");
 const feedbackEl = document.getElementById("feedback");
+const questionCard = document.getElementById("questionCard");
 
 const gameOverPanel = document.getElementById("gameOverPanel");
 const finalScoreEl = document.getElementById("finalScore");
 const lastGameTopicEl = document.getElementById("lastGameTopic");
 const restartBtn = document.getElementById("restartBtn");
 
-// Leaderboard DOM (will just show a static message for now)
+// Leaderboard DOM
 const leaderboardTabs = Array.from(document.querySelectorAll(".lb-tab"));
 const leaderboardTitle = document.getElementById("leaderboardTitle");
 const leaderboardContainer = document.getElementById("leaderboardContainer");
 const topicLeaderboardContainer = document.getElementById("topicLeaderboardContainer");
 
-// Game state
+// === SOUND EFFECTS ===
+// These expect audio files to exist in the same folder as index.html
+// (or update the filenames below to match your assets)
+let sfxCorrect, sfxWrong, sfxStart, sfxGameOver;
+
+function initSfx() {
+  try {
+    sfxCorrect = new Audio("sfx-correct.mp3");
+    sfxWrong = new Audio("sfx-wrong.mp3");
+    sfxStart = new Audio("sfx-start.mp3");
+    sfxGameOver = new Audio("sfx-gameover.mp3");
+
+    [sfxCorrect, sfxWrong, sfxStart, sfxGameOver].forEach(a => {
+      if (!a) return;
+      a.volume = 0.5;
+    });
+  } catch (err) {
+    console.warn("SFX not initialised (missing files is fine):", err);
+  }
+}
+
+function playSfx(audioObj) {
+  if (!audioObj) return;
+  try {
+    audioObj.currentTime = 0;
+    audioObj.play().catch(() => {});
+  } catch {
+    // ignore autoplay issues
+  }
+}
+
+// === GAME STATE ===
 let currentQuestions = [];
 let currentTopicKey = "all";
 let score = 0;
@@ -36,7 +71,7 @@ let lives = 3;
 let index = 0;
 const MAX_MULTIPLIER = 5;
 
-// --------- Utility helpers ----------
+// === UTILS ===
 function shuffle(array) {
   const arr = array.slice();
   for (let i = arr.length - 1; i > 0; i--) {
@@ -70,7 +105,7 @@ function buildQuestionSet(topicKey) {
   }
 }
 
-// ---------- Game flow ----------
+// === GAME FLOW ===
 function resetGameState(topicKey) {
   currentTopicKey = topicKey;
   currentQuestions = buildQuestionSet(topicKey);
@@ -85,6 +120,8 @@ function resetGameState(topicKey) {
   feedbackEl.textContent = "";
   feedbackEl.className = "feedback";
   topicLabel.textContent = getTopicLabel(topicKey);
+
+  questionCard.classList.remove("flash-correct", "flash-wrong");
 }
 
 function showQuestion() {
@@ -98,6 +135,7 @@ function showQuestion() {
   answersContainer.innerHTML = "";
   feedbackEl.textContent = "";
   feedbackEl.className = "feedback";
+  questionCard.classList.remove("flash-correct", "flash-wrong");
 
   q.options.forEach((opt, i) => {
     const btn = document.createElement("button");
@@ -122,16 +160,20 @@ function handleAnswer(correct, clickedBtn) {
 
   if (correct) {
     clickedBtn.classList.add("correct");
-    feedbackEl.textContent = "Correct! + " + (100 * multiplier);
+    feedbackEl.textContent = "Correct! +" + 100 * multiplier;
     feedbackEl.className = "feedback correct";
     score += 100 * multiplier;
     multiplier = Math.min(MAX_MULTIPLIER, multiplier + 1);
+    playSfx(sfxCorrect);
+    questionCard.classList.add("flash-correct");
   } else {
     clickedBtn.classList.add("wrong");
     feedbackEl.textContent = "Wrong! Multiplier reset.";
     feedbackEl.className = "feedback wrong";
     lives -= 1;
     multiplier = 1;
+    playSfx(sfxWrong);
+    questionCard.classList.add("flash-wrong");
   }
 
   scoreDisplay.textContent = score.toString();
@@ -146,7 +188,7 @@ function handleAnswer(correct, clickedBtn) {
     } else {
       showQuestion();
     }
-  }, 850);
+  }, 900);
 }
 
 function endGame() {
@@ -157,14 +199,15 @@ function endGame() {
   lastGameTopicEl.textContent = getTopicLabel(currentTopicKey);
 
   const name = (playerNameInput.value || "Anonymous").trim();
-  // Fire-and-forget: log score via simple GET so CORS doesn't block it
   submitScore(name, currentTopicKey, score, currentQuestions.length);
+
+  playSfx(sfxGameOver);
+
+  // refresh leaderboard shortly after saving
+  setTimeout(loadLeaderboard, 800);
 }
 
-// ---------- Score logging (no CORS readback) ----------
-
-// Uses a tracking-pixel-style GET request. Browser doesn't care about CORS
-// because we never read the response; we just let Google log it.
+// === SCORE LOGGING (fire-and-forget GET) ===
 function submitScore(name, topicKey, score, questionsPlayed) {
   try {
     const params = new URLSearchParams();
@@ -177,20 +220,73 @@ function submitScore(name, topicKey, score, questionsPlayed) {
 
     const img = new Image();
     img.src = GAS_URL + "?" + params.toString();
+    console.log("Submitting score to:", img.src);
   } catch (err) {
     console.error("Error creating score beacon:", err);
   }
 }
 
-// ---------- Leaderboard UI (static message for now) ----------
+// === LEADERBOARD LOADING & RENDERING (JSONP) ===
 
+// JSONP callback that Apps Script will call with an array of scores
+function renderLeaderboardFromScript(entries) {
+  if (!entries || !entries.length) {
+    leaderboardContainer.innerHTML =
+      "<p class='leaderboard-note'>No scores yet. Play a game to be the first on the board!</p>";
+    return;
+  }
+
+  const rowsHtml = entries
+    .map((e, i) => {
+      const place = i + 1;
+      const topic = e.topicLabel || e.topicId || "All Topics";
+      const name = e.name || "Anonymous";
+      return `
+        <tr>
+          <td>${place}</td>
+          <td>${name}</td>
+          <td>${e.score}</td>
+          <td>${topic}</td>
+        </tr>`;
+    })
+    .join("");
+
+  leaderboardContainer.innerHTML = `
+    <table class="leaderboard-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Score</th>
+          <th>Topic</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${rowsHtml}
+      </tbody>
+    </table>`;
+}
+
+// JSONP loader – adds a <script> tag pointing at your Apps Script
+function loadLeaderboard() {
+  leaderboardContainer.innerHTML =
+    "<p class='leaderboard-note'>Loading leaderboard...</p>";
+
+  const callbackName = "renderLeaderboardFromScript";
+  const script = document.createElement("script");
+  script.src =
+    GAS_URL +
+    "?action=getTopScores&limit=10&callback=" +
+    callbackName +
+    "&_=" +
+    Date.now(); // cache-buster
+  document.body.appendChild(script);
+}
+
+// === STATIC TEXT + TABS ===
 function initLeaderboardsStatic() {
   leaderboardTitle.textContent = "All Time Top Scores";
-  leaderboardContainer.innerHTML =
-    "<p class='leaderboard-note'>Scores are being recorded in your Google Sheet (Sheet1). " +
-    "Open the sheet to see full all-time / weekly / topic champions. " +
-    "We can wire live leaderboards later if needed.</p>";
-
+  // leaderboardContainer is filled by loadLeaderboard()
   topicLeaderboardContainer.innerHTML =
     "<p class='leaderboard-note'>Per-topic champions are visible in the sheet (filter by Topic ID).</p>";
 }
@@ -200,11 +296,15 @@ function setupLeaderboardTabs() {
     btn.addEventListener("click", () => {
       leaderboardTabs.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
+
+      // For now, all tabs show same top-10 list.
+      // Later we can pass extra filters (week/today) via query params.
+      loadLeaderboard();
     });
   });
 }
 
-// ---------- UI wiring ----------
+// === UI WIRING ===
 function populateTopicSelect() {
   const allOption = document.createElement("option");
   allOption.value = "all";
@@ -231,6 +331,7 @@ function startGameHandler() {
   resetGameState(topicKey);
   gameOverPanel.classList.add("hidden");
   gameSection.classList.remove("hidden");
+  playSfx(sfxStart);
   showQuestion();
 }
 
@@ -239,10 +340,12 @@ function restartGameHandler() {
   gameSection.classList.add("hidden");
 }
 
-// ---------- Init ----------
+// === INIT ===
 populateTopicSelect();
 setupLeaderboardTabs();
 initLeaderboardsStatic();
+initSfx();
+loadLeaderboard();
 
 startBtn.addEventListener("click", startGameHandler);
 restartBtn.addEventListener("click", restartGameHandler);
