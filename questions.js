@@ -174,9 +174,7 @@
   ]
 },
 
-
-
-newMedia: {
+    newMedia: {
   id: "newMedia",
   label: "02 – New Media",
   questions: [
@@ -333,9 +331,961 @@ newMedia: {
   ]
 },
 
+    productsMediaPt1: {
+  id: "productsMediaPt1",
+  label: "03 – Products in the Media Industry pt1",
+  questions: [
+    {
+      q: "In the context of R093, a 'media product' is best described as:",
+      options: [
+        "Any physical device like a phone or TV",
+        "Any piece of content created for an audience such as video, audio or graphics",
+        "Only TV programmes and films",
+        "Only printed magazines"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which of the following is a moving image (video) product?",
+      options: ["Podcast", "Feature film", "Radio advert", "Poster"],
+      answerIndex: 1
+    },
+    {
+      q: "Audio products include things like:",
+      options: [
+        "Soundtracks, radio shows and sound effects",
+        "Comics and graphic novels",
+        "Posters and leaflets",
+        "VR headsets"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Music products are MOST likely to include:",
+      options: [
+        "Bands, solo artists and film soundtracks",
+        "Web pages and blogs",
+        "Game controllers",
+        "Instruction manuals"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Which pair both count as media products?",
+      options: [
+        "Television drama and radio news bulletin",
+        "Laptop and smartphone",
+        "Tripod and microphone stand",
+        "Printer and scanner"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Why are media products important to the media industry?",
+      options: [
+        "They are the main way media companies communicate with and entertain audiences",
+        "They only help with staff training",
+        "They are only used for legal reasons",
+        "They replace all research"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Which of the following is the BEST example of an interactive media product?",
+      options: ["Magazine cover", "Cinema trailer", "Mobile game app", "Radio jingle"],
+      answerIndex: 2
+    },
+    {
+      q: "A TV advert for a new game is mainly an example of:",
+      options: ["Audio product", "Video product", "Printed product", "Hardware product"],
+      answerIndex: 1
+    },
+    {
+      q: "Which product is most suitable for delivering long-form spoken content to listeners on the move?",
+      options: ["Poster", "Podcast", "Web banner", "Comic strip"],
+      answerIndex: 1
+    },
+    {
+      q: "When planning a project, identifying the correct type of media product helps mainly with:",
+      options: [
+        "Choosing appropriate formats and distribution methods",
+        "Avoiding having a budget",
+        "Removing the need for a client brief",
+        "Ignoring the audience"
+      ],
+      answerIndex: 0
+    }
+  ]
+},
 
+    productsMediaPt2: {
+  id: "productsMediaPt2",
+  label: "04 – Products in the Media Industry pt2",
+  questions: [
+    {
+      q: "Animation is best described as:",
+      options: [
+        "Single still images only",
+        "A series of images or graphics shown in quick succession to create movement",
+        "Only hand-drawn cartoons on paper",
+        "Live-action filming with actors"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which of the following is NOT a common animation technique?",
+      options: [
+        "Hand-drawn animation",
+        "Stop-motion animation",
+        "3D computer-generated animation",
+        "Mono audio recording"
+      ],
+      answerIndex: 3
+    },
+    {
+      q: "Special Effects (SFX) are usually:",
+      options: [
+        "Created physically on set, such as explosions or prosthetics",
+        "Always made in a computer",
+        "Only used in animated films",
+        "Used only in radio"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Visual Effects (VFX) are typically:",
+      options: [
+        "Real-world pyrotechnics and stunt work",
+        "Computer-generated elements added to or altering live-action footage",
+        "Only the sound mix",
+        "Only used for subtitles"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Green screens are mainly used so that:",
+      options: [
+        "Actors can see themselves while filming",
+        "Editors can easily replace the background with digital imagery",
+        "Lighting can be avoided",
+        "Sound can be recorded more clearly"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Digital imaging and graphics are MOST often created and edited using:",
+      options: [
+        "Word processors",
+        "Specialist graphics and photo-editing software",
+        "Spreadsheet software only",
+        "Presentation software"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which hardware is most important for capturing original digital images?",
+      options: [
+        "Digital camera or smartphone camera",
+        "Inkjet printer",
+        "Graphics tablet only",
+        "Games console"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Which project would MOST rely on SFX and VFX?",
+      options: [
+        "Local newspaper article",
+        "Explosive superhero film with CGI monsters",
+        "Radio news bulletin",
+        "Simple web banner advert"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A CGI dragon flying over a real city skyline is an example of:",
+      options: ["SFX only", "VFX only", "Both SFX and VFX", "No effect at all"],
+      answerIndex: 1
+    },
+    {
+      q: "Why is digital imaging important across many media sectors?",
+      options: [
+        "It allows high-quality visuals for print, web, games and film",
+        "It removes the need for cameras",
+        "It is only used in comics",
+        "It replaces all sound design"
+      ],
+      answerIndex: 0
+    }
+  ]
+},
 
-purposeMediaProducts: {
+    productsMediaPt3: {
+  id: "productsMediaPt3",
+  label: "05 – Products in the Media Industry pt3",
+  questions: [
+    {
+      q: "Social media platforms such as Instagram and TikTok are mainly used by media companies to:",
+      options: [
+        "Print newspapers",
+        "Reach audiences, share content and promote products",
+        "Design circuit boards",
+        "Replace all other media formats"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "User-generated content is:",
+      options: [
+        "Content created by audiences themselves, such as posts and videos",
+        "Only made by professional studios",
+        "Always printed on paper",
+        "Illegal media"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Which of these is an example of a digital game product?",
+      options: ["Cinema advert", "Open-world console game", "Radio jingle", "Magazine cover"],
+      answerIndex: 1
+    },
+    {
+      q: "Digital games can be played on:",
+      options: [
+        "Only dedicated consoles",
+        "Consoles, PCs, smartphones and tablets",
+        "Only VR headsets",
+        "Only arcade machines"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Comic books and graphic novels are usually:",
+      options: [
+        "Printed or digital sequential art telling a story through panels",
+        "Only audio stories",
+        "Spreadsheets of data",
+        "Hardware devices"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Why are social media platforms powerful tools for marketing?",
+      options: [
+        "They never allow adverts",
+        "They enable fast sharing, targeted adverts and interaction with followers",
+        "They are only used privately",
+        "They work only without the internet"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A studio runs a hashtag campaign encouraging fans to share photos. This mainly uses:",
+      options: [
+        "Traditional print media",
+        "User-generated content on social media",
+        "Only radio",
+        "Only cinema"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Digital games often combine which elements?",
+      options: [
+        "Video, audio, music and interactivity",
+        "Only still images",
+        "Only printed text",
+        "Only radio interviews"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "A comic strip printed weekly inside a newspaper is an example of:",
+      options: [
+        "Moving image media",
+        "Print-based media product",
+        "Audio product",
+        "Hardware product"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which statement about comics and graphic novels is TRUE?",
+      options: [
+        "They are always for young children only",
+        "They can target different audiences, from children to adults, depending on content",
+        "They cannot tell serious stories",
+        "They are only available online"
+      ],
+      answerIndex: 1
+    }
+  ]
+},
+
+    productsMediaPt4: {
+  id: "productsMediaPt4",
+  label: "06 – Products in the Media Industry pt4",
+  questions: [
+    {
+      q: "A website is best described as:",
+      options: [
+        "A single printed leaflet",
+        "A collection of linked web pages accessed via the internet",
+        "Only a social media post",
+        "A stand-alone video file"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A multimedia product usually:",
+      options: [
+        "Uses text only",
+        "Combines text, images, audio and video in an interactive package",
+        "Is always printed",
+        "Contains no graphics"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Apps are commonly installed on:",
+      options: [
+        "Smartphones, tablets and smart TVs",
+        "Printers only",
+        "Paper posters",
+        "CD-ROM drives only"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Augmented Reality (AR) is when:",
+      options: [
+        "A completely virtual world replaces reality",
+        "Digital elements are layered on top of real-world views",
+        "Only text is displayed on screen",
+        "No technology is used"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Virtual Reality (VR) experiences typically:",
+      options: [
+        "Use headsets to immerse the user in a fully digital 3D environment",
+        "Use only radio",
+        "Are printed leaflets",
+        "Can only be used on paper"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "eBooks are particularly suited to:",
+      options: [
+        "Long-form text such as novels that readers can store and read digitally",
+        "High-budget action films",
+        "Live concerts",
+        "Short radio jingles only"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Which of the following is a benefit of using a website for a media campaign?",
+      options: [
+        "It cannot be updated",
+        "It enables global access, embedded media and links to other platforms",
+        "It is never interactive",
+        "It only works without images"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Social media apps often support media campaigns by:",
+      options: [
+        "Reducing audience interaction",
+        "Driving traffic to websites and encouraging sharing of content",
+        "Stopping users from commenting",
+        "Removing all visuals"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "In the media industry, VR and AR are often used to:",
+      options: [
+        "Create immersive experiences such as virtual tours or interactive promos",
+        "Replace storyboards",
+        "Only compress files",
+        "Only send emails"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "A multimedia educational CD-ROM used in schools is an example of:",
+      options: [
+        "Traditional radio",
+        "Interactive multimedia product combining text, images, audio and video",
+        "Only a printed worksheet",
+        "Hardware only"
+      ],
+      answerIndex: 1
+    }
+  ]
+},
+
+    creativeJobRoles: {
+  id: "creativeJobRoles",
+  label: "07 – Creative Job Roles",
+  questions: [
+    {
+      q: "A graphic designer is mainly responsible for:",
+      options: [
+        "Network maintenance",
+        "Creating visual designs such as posters and logos",
+        "Writing legal contracts",
+        "Managing budgets"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A scriptwriter’s primary task is to:",
+      options: [
+        "Operate cameras on set",
+        "Write dialogue, scenes and narrative structure",
+        "Design websites",
+        "Mix audio tracks"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A concept artist is usually involved in:",
+      options: [
+        "Creating early visual ideas for characters, environments or products",
+        "Managing social media adverts",
+        "Editing the final video",
+        "Testing software"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Which creative role is MOST responsible for deciding the visual style of a film?",
+      options: [
+        "Network technician",
+        "Director",
+        "Sound engineer",
+        "Database administrator"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A copywriter’s job is to:",
+      options: [
+        "Write persuasive text for adverts and websites",
+        "Edit audio",
+        "Design logos",
+        "Test camera equipment"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Which role would normally design the layout and imagery for a magazine cover?",
+      options: ["Graphic designer", "Camera operator", "Sound designer", "Network engineer"],
+      answerIndex: 0
+    },
+    {
+      q: "An illustrator is primarily involved in:",
+      options: [
+        "Drawing and creating bespoke artworks",
+        "Planning budgets",
+        "Configuring routers",
+        "Editing code"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "A social media content creator typically:",
+      options: [
+        "Designs CPU chips",
+        "Creates short-form digital content and posts for social platforms",
+        "Edits only radio shows",
+        "Writes user manuals for printers"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which of the following is a creative responsibility of a game designer?",
+      options: [
+        "Building the console hardware",
+        "Designing gameplay mechanics, levels and player experience",
+        "Managing electricity supply",
+        "Running the school network"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A storyboard artist’s key task is to:",
+      options: [
+        "Write dialogue",
+        "Draw shot-by-shot panels to visualise scenes",
+        "Design websites",
+        "Perform quality assurance testing"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which role is MOST likely to decide how actors perform each scene?",
+      options: ["Director", "Graphic designer", "Web developer", "Sound operator"],
+      answerIndex: 0
+    },
+    {
+      q: "A creative director in an advertising agency is usually responsible for:",
+      options: [
+        "Maintaining the building",
+        "Leading the overall creative vision for campaigns",
+        "Installing software",
+        "Approving all IT purchases"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which creative role focuses on designing the user interface and experience?",
+      options: ["Database admin", "UI/UX designer", "Network manager", "Camera assistant"],
+      answerIndex: 1
+    },
+    {
+      q: "A photographer’s main creative tasks include:",
+      options: [
+        "Editing code",
+        "Capturing images, composing shots and choosing lighting",
+        "Licensing music",
+        "Writing contracts"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which of the following is a typical skill for a creative media job role?",
+      options: [
+        "Strong visual design and storytelling skills",
+        "Ability to wire network cabinets only",
+        "Knowledge of building regulations only",
+        "No teamwork skills"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "An animator’s job is to:",
+      options: [
+        "Shoot live-action footage only",
+        "Create moving images using drawings, 3D models or digital assets",
+        "Maintain databases",
+        "Write radio news scripts"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which role would be MOST involved in selecting colour palettes and typography?",
+      options: ["Sound editor", "Graphic designer", "Network engineer", "Lighting technician"],
+      answerIndex: 1
+    },
+    {
+      q: "A creative media job role usually requires the ability to:",
+      options: [
+        "Work alone with no feedback",
+        "Collaborate with others and respond to client briefs",
+        "Install operating systems",
+        "Configure firewalls only"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which creative role might design the visual brand identity for a new app?",
+      options: [
+        "Brand designer/graphic designer",
+        "Database manager",
+        "Network technician",
+        "Audio engineer"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "One responsibility of a film director is to:",
+      options: [
+        "Control lighting only",
+        "Guide the artistic and dramatic aspects of the film",
+        "Write all contracts",
+        "Print posters"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A creative job role where you design and draw characters for animation or games is:",
+      options: ["Systems analyst", "Character designer", "Printer technician", "IT support"],
+      answerIndex: 1
+    },
+    {
+      q: "Why is a portfolio important for creative job roles?",
+      options: [
+        "Shows evidence of past creative work and skills",
+        "Stores passwords",
+        "Shows attendance",
+        "Lists exam marks only"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Which role is MOST likely to work closely with a scriptwriter?",
+      options: ["Camera repair technician", "Director", "Network admin", "IT trainer"],
+      answerIndex: 1
+    },
+    {
+      q: "When responding to a client brief, a creative professional must:",
+      options: [
+        "Ignore all requirements",
+        "Produce ideas that meet the client’s aims and target audience",
+        "Set their own unrelated goals",
+        "Avoid any communication"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Overall, creative job roles in media focus on:",
+      options: [
+        "Technical infrastructure only",
+        "Generating and shaping ideas into engaging media products",
+        "Managing power supplies",
+        "Installing Wi-Fi routers"
+      ],
+      answerIndex: 1
+    }
+  ]
+},
+
+    technicalJobRoles: {
+  id: "technicalJobRoles",
+  label: "08 – Technical Job Roles",
+  questions: [
+    {
+      q: "A camera operator’s main responsibility is to:",
+      options: [
+        "Write scripts",
+        "Capture footage using cameras following the director’s instructions",
+        "Design logos",
+        "Record sound only"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A video editor mainly:",
+      options: [
+        "Chooses actors",
+        "Assembles, trims and combines footage to create a finished sequence",
+        "Designs the cinema",
+        "Writes the soundtrack"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A sound engineer is responsible for:",
+      options: [
+        "Lighting the set",
+        "Recording and mixing audio to a high quality",
+        "Designing fonts",
+        "Operating drones"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which technical role controls the lighting setup on a film set?",
+      options: ["Lighting technician", "Scriptwriter", "Graphic artist", "Producer"],
+      answerIndex: 0
+    },
+    {
+      q: "A web developer’s job is to:",
+      options: [
+        "Write and maintain website code and functionality",
+        "Act in front of camera",
+        "Mix sound for radio",
+        "Write print articles"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "A broadcast technician typically works with:",
+      options: [
+        "Cameras only",
+        "Equipment used to transmit radio and TV signals",
+        "Game controllers",
+        "Social media posts"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which technical role ensures that all IT systems for a production are working correctly?",
+      options: ["Network administrator", "Graphic designer", "Animator", "Copywriter"],
+      answerIndex: 0
+    },
+    {
+      q: "A 3D modeller’s technical role is to:",
+      options: [
+        "Write scripts",
+        "Create three-dimensional digital models for games, films or VR",
+        "Operate boom microphones",
+        "Design posters"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A VFX (visual effects) artist mainly:",
+      options: [
+        "Edits the script",
+        "Creates computer-generated imagery and effects to enhance footage",
+        "Manages budgets",
+        "Directs actors"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "The role of a systems administrator includes:",
+      options: [
+        "Writing articles",
+        "Maintaining servers, user accounts and network security",
+        "Acting on screen",
+        "Editing videos"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which technical role prepares, tests and operates microphones on a set?",
+      options: ["Lighting assistant", "Boom operator / sound assistant", "Storyboard artist", "Producer"],
+      answerIndex: 1
+    },
+    {
+      q: "A technician responsible for setting up projectors, screens and sound in a cinema is:",
+      options: ["Projectionist", "Copywriter", "Director", "Camera operator"],
+      answerIndex: 0
+    },
+    {
+      q: "A QA (quality assurance) tester in a games company is responsible for:",
+      options: [
+        "Designing characters",
+        "Finding and reporting bugs and issues in the game",
+        "Writing music",
+        "Filming cutscenes"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which technical role would be MOST involved in adjusting colour grading in post-production?",
+      options: ["Sound editor", "Colourist", "Camera assistant", "Lighting technician"],
+      answerIndex: 1
+    },
+    {
+      q: "A database administrator in a media company would mainly:",
+      options: [
+        "Create movie trailers",
+        "Manage data storage, backup and organisation",
+        "Edit posters",
+        "Record podcasts"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A technical director in a live TV production:",
+      options: [
+        "Draws storyboards",
+        "Operates the vision mixing desk and coordinates technical crew",
+        "Writes scripts",
+        "Acts in the show"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Why are technical job roles vital in media production?",
+      options: [
+        "They handle the legal contracts",
+        "They ensure the equipment and technology function correctly and reliably",
+        "They replace creative staff",
+        "They manage school timetables"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "The person responsible for setting up and maintaining studio cameras is usually the:",
+      options: ["Camera operator or studio camera technician", "Graphic designer", "Copywriter", "Marketing manager"],
+      answerIndex: 0
+    },
+    {
+      q: "Which technical role would handle streaming a live event online?",
+      options: [
+        "Lighting designer",
+        "Streaming/broadcast technician",
+        "Illustrator",
+        "Script editor"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A Foley artist works on:",
+      options: [
+        "Creating and recording sound effects in sync with visuals",
+        "Grading colours",
+        "Designing websites",
+        "Editing scripts"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "A technical job role often requires:",
+      options: [
+        "Strong practical skills with hardware and software",
+        "No knowledge of technology",
+        "Only drawing skills",
+        "Only acting skills"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Which role might work closely with a sound engineer?",
+      options: [
+        "Animator only",
+        "Director and music composer",
+        "Printer operator",
+        "Camera repairer only"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "What is a key responsibility of an IT support technician in a media organisation?",
+      options: [
+        "Choosing actors",
+        "Fixing hardware and software issues for staff",
+        "Writing scripts",
+        "Mixing audio"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Technical job roles differ from creative roles mainly because they:",
+      options: [
+        "Focus on visual design only",
+        "Focus on operating and maintaining the technical systems used in production",
+        "Never work in teams",
+        "Do not need training"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Overall, technical job roles in media ensure that:",
+      options: [
+        "Creative ideas can be realised using the right tools and technology",
+        "No planning is required",
+        "Only paper documents are used",
+        "All products are identical"
+      ],
+      answerIndex: 0
+    }
+  ]
+},
+
+    seniorJobRoles: {
+  id: "seniorJobRoles",
+  label: "09 – Senior Job Roles",
+  questions: [
+    {
+      q: "A director’s main responsibility in a film production is to:",
+      options: [
+        "Operate cameras only",
+        "Lead the creative vision and direct cast and crew",
+        "Design cinema posters",
+        "Sell tickets"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A production manager is mainly responsible for:",
+      options: [
+        "Acting in the film",
+        "Co-ordinating schedules, budgets and communication between departments",
+        "Writing the soundtrack",
+        "Rating the film for age suitability"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "In publishing, an editor’s job usually includes:",
+      options: [
+        "Choosing and shaping content for books, magazines or newspapers",
+        "Operating lights on set",
+        "Designing camera lenses",
+        "Mixing surround sound"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "A creative director typically:",
+      options: [
+        "Runs the cinema",
+        "Leads the overall look, branding and creative strategy of a project",
+        "Drives delivery vans",
+        "Writes software code only"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A campaign manager in a media company focuses on:",
+      options: [
+        "Planning, running and monitoring marketing campaigns",
+        "Repairing equipment",
+        "Casting extras",
+        "Writing exam papers"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "How do senior roles differ from junior roles?",
+      options: [
+        "They involve more responsibility for decision-making and managing others",
+        "They never work with anyone else",
+        "They only do simple tasks",
+        "They do not need to communicate with clients"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "In a small production, one person might:",
+      options: [
+        "Carry out several senior and junior roles due to limited budget",
+        "Work only as a viewer",
+        "Be paid but have no tasks",
+        "Avoid any planning"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Which senior role would MOST likely approve final marketing materials before release?",
+      options: ["Runner", "Creative director", "Camera assistant", "Lighting technician"],
+      answerIndex: 1
+    },
+    {
+      q: "Why are senior roles crucial to media productions?",
+      options: [
+        "They ensure projects are planned, led and delivered to meet client and audience needs",
+        "They only take notes",
+        "They replace all other staff",
+        "They avoid communicating with anyone"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Which statement is TRUE about the size of a production and senior roles?",
+      options: [
+        "Large productions usually have more specialised senior roles",
+        "Smaller projects always have more senior staff",
+        "Project size never affects staffing",
+        "Senior roles do not exist on big projects"
+      ],
+      answerIndex: 0
+    }
+  ]
+},
+
+    purposeMediaProducts: {
   id: "purposeMediaProducts",
   label: "10 – Purpose of Media Products",
   questions: [
@@ -467,9 +1417,7 @@ purposeMediaProducts: {
   ]
 },
 
-
-
-clientRequirements: {
+    clientRequirements: {
   id: "clientRequirements",
   label: "11 – Client Requirements",
   questions: [
@@ -651,9 +1599,7 @@ clientRequirements: {
   ]
 },
 
-
-
-clientBriefFormats: {
+    clientBriefFormats: {
   id: "clientBriefFormats",
   label: "12 – Client Brief Formats",
   questions: [
@@ -865,188 +1811,343 @@ clientBriefFormats: {
   ]
 },
 
-
-
-mediaCodes: {
-  id: "mediaCodes",
-  label: "17 – Media Codes",
+    audienceSegmentation: {
+  id: "audienceSegmentation",
+  label: "13 – Audience Segmentation",
   questions: [
     {
-      q: "Media codes are used in media products to:",
-      options: [
-        "Control file size",
-        "Create meaning for the audience",
-        "Set the upload schedule",
-        "Define budget"
-      ],
+      q: "Audience segmentation is the process of:",
+      options: ["Creating random groups", "Dividing audiences into categories based on shared characteristics", "Hiring actors", "Designing logos"],
       answerIndex: 1
     },
     {
-      q: "Technical codes include:",
-      options: ["Camera angles and lighting", "Character clothing", "Props", "Settings"],
+      q: "Demographic segmentation includes factors such as:",
+      options: ["Hobbies", "Values", "Age, gender and income", "Personality traits"],
+      answerIndex: 2
+    },
+    {
+      q: "Psychographic segmentation focuses on:",
+      options: ["Lifestyle, interests and values", "Geographic location only", "Income level alone", "Education level only"],
       answerIndex: 0
     },
     {
-      q: "Symbolic codes include:",
-      options: ["Camera movement only", "Costume, colours and body language", "Editing transitions only", "Sound effects only"],
+      q: "Geographic segmentation divides audiences by:",
+      options: ["Online behaviour", "Location and region", "Social class", "Personality"],
       answerIndex: 1
     },
     {
-      q: "Written codes are mainly related to:",
-      options: ["Camera lenses", "Text, fonts and on-screen language", "Lighting rigs", "File formats"],
+      q: "Which group is defined by demographic segmentation?",
+      options: ["People who enjoy football", "Adults aged 25–34", "People living in Scotland", "People who value creativity"],
       answerIndex: 1
     },
     {
-      q: "Which of the following is a technical code?",
-      options: ["Facial expression", "Dialogue", "Close-up shot", "Costume"],
-      answerIndex: 2
-    },
-    {
-      q: "Which is an example of a symbolic code in a horror film?",
-      options: [
-        "Jump cuts",
-        "High-angle shot",
-        "Dark costume and low lighting",
-        "Credits text"
-      ],
-      answerIndex: 2
-    },
-    {
-      q: "Red in a poster can symbolically represent:",
-      options: ["Calm and relaxation", "Danger or passion", "Cold weather", "Silence"],
+      q: "A media product targeting ‘urban young professionals’ is using:",
+      options: ["Demographic segmentation", "Geographic and psychographic segmentation", "Time-based segmentation", "Random grouping"],
       answerIndex: 1
     },
     {
-      q: "A skull symbol is an example of:",
-      options: ["Written code", "Symbolic code", "Technical code", "Audio code"],
+      q: "Why do media producers use audience segmentation?",
+      options: ["To reduce production quality", "To target content more effectively", "To limit distribution", "To avoid marketing"],
       answerIndex: 1
     },
     {
-      q: "Using a low-angle shot of a character makes them appear:",
-      options: ["Weak", "Powerful or dominant", "Invisible", "Unimportant"],
+      q: "A brand that markets high-end headphones to music lovers is using:",
+      options: ["Demographic segmentation", "Psychographic segmentation", "Behavioural segmentation", "Geographic segmentation"],
       answerIndex: 1
     },
     {
-      q: "Fast-paced editing in an action sequence is a:",
-      options: ["Symbolic code", "Technical code related to editing", "Written code", "Random choice"],
-      answerIndex: 1
-    },
-    {
-      q: "A formal serif font in a brochure is likely to communicate:",
-      options: ["Playfulness", "Seriousness and professionalism", "Confusion", "Humour only"],
-      answerIndex: 1
-    },
-    {
-      q: "Which is an example of a written code in a TV drama?",
-      options: ["Dialogue on screen as subtitles", "Handheld camera movement", "Character costume", "Weather conditions"],
+      q: "Behavioural segmentation includes:",
+      options: ["Buying habits and brand loyalty", "Skin tone", "Accent", "Climate"],
       answerIndex: 0
     },
     {
-      q: "Bright high-key lighting in a scene usually suggests:",
-      options: ["Horror and fear", "A cheerful, safe environment", "Mystery", "Invisible characters"],
+      q: "A soft drink company targeting messaging to hot-weather regions is using:",
+      options: ["Behavioural segmentation", "Psychographic segmentation", "Geographic segmentation", "Random advertising"],
+      answerIndex: 2
+    },
+    {
+      q: "Which is an example of a psychographic trait?",
+      options: ["Postcode", "Income", "Lifestyle preference", "Age"],
+      answerIndex: 2
+    },
+    {
+      q: "A YouTube advert aimed at gamers aged 13–18 is using:",
+      options: ["Broad targeting", "Demographic and interest-based segmentation", "Geographic-only segmentation", "No segmentation"],
       answerIndex: 1
     },
     {
-      q: "An extreme close-up of a character’s eyes is used to:",
-      options: [
-        "Show the entire location",
-        "Focus on emotion and detail",
-        "Increase shot distance",
-        "Avoid symbolism"
-      ],
+      q: "Which of these would be the BEST evidence for behavioural segmentation?",
+      options: ["TV licence data", "Purchase history", "Birth certificates", "Postcodes"],
       answerIndex: 1
     },
     {
-      q: "Which combination shows only technical codes?",
-      options: [
-        "Camera shots, camera movement, editing",
-        "Colour, symbols, costume",
-        "Fonts, on-screen text, headlines",
-        "Props, setting, colour"
-      ],
+      q: "A company marketing different adverts to families and single adults is using:",
+      options: ["House style rules", "Lifestyle segmentation", "Demographic segmentation", "Casting decisions"],
+      answerIndex: 2
+    },
+    {
+      q: "Age rating systems (e.g., 12, 16, 18) help producers understand:",
+      options: ["Production budgets", "Audience age demographic", "Colour schemes", "File compression"],
+      answerIndex: 1
+    },
+    {
+      q: "A clothing brand targeting teenagers who follow streetwear trends uses:",
+      options: ["Psychographic segmentation", "Geographic segmentation", "Income segmentation", "Behavioural segmentation only"],
       answerIndex: 0
     },
     {
-      q: "In a poster, using all-caps bold text for the film title is a:",
-      options: ["Symbolic code", "Technical code", "Written code", "Non-diegetic sound"],
-      answerIndex: 2
-    },
-    {
-      q: "The setting of a scene (e.g. a dark alley) is primarily a:",
-      options: ["Technical code", "Written code", "Symbolic code", "Audio code"],
-      answerIndex: 2
-    },
-    {
-      q: "Which of these is an example of an audio code?",
+      q: "Which combination represents ALL four main segmentation types?",
       options: [
-        "Colour palette",
-        "Camera zoom",
-        "Non-diegetic music",
-        "Font choice"
-      ],
-      answerIndex: 2
-    },
-    {
-      q: "Slow, sad music in a scene is used to:",
-      options: ["Create tension", "Create a joyful mood", "Reinforce emotional meaning", "Confuse the audience"],
-      answerIndex: 2
-    },
-    {
-      q: "A newsreader wearing a smart suit is a:",
-      options: ["Technical camera choice", "Symbolic code suggesting professionalism", "Written code", "Editing decision"],
-      answerIndex: 1
-    },
-    {
-      q: "Why is it important to understand media codes when creating a product?",
-      options: [
-        "To make files smaller",
-        "To create the intended meaning for the target audience",
-        "To increase printing speed",
-        "To avoid using colour"
+        "Genre, style, budget, purpose",
+        "Age, values, postcode, buying habits",
+        "Colour, typography, layout, format",
+        "Editing, lighting, sound, props"
       ],
       answerIndex: 1
     },
     {
-      q: "Which is an example of mise-en-scène?",
-      options: [
-        "Soundtrack only",
-        "Camera frame rate",
-        "Everything placed in front of the camera, such as props and costume",
-        "File export settings"
-      ],
-      answerIndex: 2
+      q: "A tourist board promoting holidays differently in summer and winter is using:",
+      options: ["Seasonal behavioural segmentation", "Demographic segmentation", "Psychographic segmentation", "Random promotion"],
+      answerIndex: 0
     },
     {
-      q: "Handheld shaky camera movement in a chase scene is used to:",
+      q: "Why is audience segmentation important in advertising?",
       options: [
-        "Calm the scene",
-        "Create realism and tension",
-        "Remove tension",
-        "Show slow motion"
+        "It increases production time",
+        "It ensures adverts reach the right audience more effectively",
+        "It reduces the number of ideas",
+        "It stops user feedback"
       ],
       answerIndex: 1
     },
     {
-      q: "A montage sequence created by editing together short shots is a use of:",
-      options: ["Symbolic codes", "Editing as a technical code", "Written codes only", "Lighting codes only"],
+      q: "If a product is aimed at people with shared beliefs about the environment, this is:",
+      options: ["Demographic segmentation", "Psychographic segmentation", "Behavioural segmentation", "Geographic segmentation"],
       answerIndex: 1
     },
     {
-      q: "Which best describes media codes overall?",
-      options: [
-        "Rules about export formats",
-        "Ways in which meaning is created through technical, symbolic and written elements",
-        "Only text used in media",
-        "Only sound effects"
-      ],
+      q: "Streaming services recommending shows based on viewing habits is an example of:",
+      options: ["Demographic segmentation", "Behavioural segmentation", "No segmentation", "Incorrect targeting"],
+      answerIndex: 1
+    },
+    {
+      q: "A campaign aimed at ‘parents in Nottingham’ is a mix of:",
+      options: ["Demographic + geographic segmentation", "Colour + typography", "Behavioural only", "No segmentation"],
+      answerIndex: 0
+    },
+    {
+      q: "Primary school educational software is targeted by:",
+      options: ["Random allocation", "Age demographic", "Psychographic preference only", "Climate region"],
+      answerIndex: 1
+    },
+    {
+      q: "A fitness brand promoting different workouts to beginners and experts is using:",
+      options: ["Skill-level behavioural segmentation", "Demographic only", "Psychographic only", "Geographic segmentation"],
+      answerIndex: 0
+    },
+    {
+      q: "Audience segmentation allows producers to:",
+      options: ["Make products illegal", "Design content that meets audience needs and expectations", "Stop advertising", "Avoid planning"],
       answerIndex: 1
     }
   ]
 },
 
+    audienceResearch: {
+  id: "audienceResearch",
+  label: "14 – Audience Research",
+  questions: [
+    {
+      q: "Audience research is mainly used to:",
+      options: [
+        "Guess what the audience might like",
+        "Understand who the target audience is and what they want",
+        "Set staff wages",
+        "Design hardware only"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Primary research in audience research involves:",
+      options: [
+        "Collecting new data first-hand, e.g. surveys or interviews",
+        "Reading textbooks only",
+        "Using old exam papers",
+        "Downloading images from the internet"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Secondary research in audience research means:",
+      options: [
+        "Collecting questionnaires yourself",
+        "Using existing data from sources like books, websites or reports",
+        "Ignoring other people’s work",
+        "Only testing prototypes"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which of the following is a primary research method?",
+      options: ["Government statistics", "An online survey you create", "A textbook", "An industry report"],
+      answerIndex: 1
+    },
+    {
+      q: "Which of the following is a secondary research source?",
+      options: ["Focus group you run", "One-to-one interview", "Published industry report", "Questionnaire you design"],
+      answerIndex: 2
+    },
+    {
+      q: "Why is audience research important before production starts?",
+      options: [
+        "It allows producers to tailor products to audience interests and reduce risk of failure",
+        "It wastes time",
+        "It replaces all planning documents",
+        "It is only needed after release"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Audience segmentation means:",
+      options: [
+        "Choosing actors",
+        "Dividing a large audience into groups based on shared characteristics",
+        "Editing film into shots",
+        "Compressing audio files"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which is the BEST example of using audience research?",
+      options: [
+        "Guessing what teenagers like",
+        "Using survey results to choose which features to include in a new app",
+        "Ignoring feedback from testers",
+        "Copying a competitor’s design exactly"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A company reads viewing figures and existing reports before writing its own questionnaire. This is:",
+      options: [
+        "Poor planning",
+        "An effective combination of secondary then primary research",
+        "Only primary research",
+        "Not research at all"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which of these is a risk of relying ONLY on secondary audience research?",
+      options: [
+        "Data may be out of date or not match your exact target audience",
+        "You will always get more accurate results",
+        "You never need to analyse data",
+        "You automatically avoid bias"
+      ],
+      answerIndex: 0
+    }
+  ]
+},
 
+    primaryResearchMethods: {
+  id: "primaryResearchMethods",
+  label: "15 – Primary Research Methods",
+  questions: [
+    {
+      q: "Primary research is:",
+      options: [
+        "Data collected first-hand for a specific purpose",
+        "Information taken from books only",
+        "Always free government data",
+        "Any data found on the internet"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Which of the following is a primary research method?",
+      options: ["Questionnaire you design and distribute", "Wikipedia article", "Old exam paper", "Textbook summary"],
+      answerIndex: 0
+    },
+    {
+      q: "Focus groups are best described as:",
+      options: [
+        "Large anonymous online surveys",
+        "Small groups of people discussing questions led by a researcher",
+        "One-to-one interviews",
+        "Only written tests"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "One advantage of an online survey is that it:",
+      options: [
+        "Can quickly reach a large number of respondents and collect data automatically",
+        "Always gives 100% truthful answers",
+        "Is impossible to analyse",
+        "Costs a lot of money to send"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "A disadvantage of focus groups is that:",
+      options: [
+        "They are always anonymous",
+        "They can be time-consuming and a few people may dominate the discussion",
+        "They cannot be recorded",
+        "They never provide opinions"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Observation as a research method involves:",
+      options: [
+        "Watching how people behave or use a product in real situations",
+        "Only reading reports",
+        "Sending marketing emails",
+        "Editing video footage"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Which method would be BEST for collecting detailed opinions and reasons from one person?",
+      options: ["Online poll", "Structured one-to-one interview", "Government statistics", "Viewing figures"],
+      answerIndex: 1
+    },
+    {
+      q: "When writing questionnaire questions you should:",
+      options: [
+        "Ask multiple questions at once and use confusing wording",
+        "Keep questions clear, unbiased and easy to understand",
+        "Avoid multiple-choice questions",
+        "Never test your questions first"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Why might a media company combine different primary research methods?",
+      options: [
+        "To waste more time",
+        "To cross-check findings and gain a richer understanding of the audience",
+        "To avoid analysing data",
+        "To replace planning documents"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which statement about online surveys is TRUE?",
+      options: [
+        "They can be distributed quickly but may suffer from low response rates or dishonest answers",
+        "They are always completed by everyone",
+        "They provide only qualitative data",
+        "They must be done on paper"
+      ],
+      answerIndex: 0
+    }
+  ]
+},
 
-secondaryResearch: {
+    secondaryResearch: {
   id: "secondaryResearch",
   label: "16 – Secondary Research Methods",
   questions: [
@@ -1278,155 +2379,759 @@ secondaryResearch: {
   ]
 },
 
-
-
-
-audienceSegmentation: {
-  id: "audienceSegmentation",
-  label: "13 – Audience Segmentation",
+    mediaCodes: {
+  id: "mediaCodes",
+  label: "17 – Media Codes",
   questions: [
     {
-      q: "Audience segmentation is the process of:",
-      options: ["Creating random groups", "Dividing audiences into categories based on shared characteristics", "Hiring actors", "Designing logos"],
-      answerIndex: 1
-    },
-    {
-      q: "Demographic segmentation includes factors such as:",
-      options: ["Hobbies", "Values", "Age, gender and income", "Personality traits"],
-      answerIndex: 2
-    },
-    {
-      q: "Psychographic segmentation focuses on:",
-      options: ["Lifestyle, interests and values", "Geographic location only", "Income level alone", "Education level only"],
-      answerIndex: 0
-    },
-    {
-      q: "Geographic segmentation divides audiences by:",
-      options: ["Online behaviour", "Location and region", "Social class", "Personality"],
-      answerIndex: 1
-    },
-    {
-      q: "Which group is defined by demographic segmentation?",
-      options: ["People who enjoy football", "Adults aged 25–34", "People living in Scotland", "People who value creativity"],
-      answerIndex: 1
-    },
-    {
-      q: "A media product targeting ‘urban young professionals’ is using:",
-      options: ["Demographic segmentation", "Geographic and psychographic segmentation", "Time-based segmentation", "Random grouping"],
-      answerIndex: 1
-    },
-    {
-      q: "Why do media producers use audience segmentation?",
-      options: ["To reduce production quality", "To target content more effectively", "To limit distribution", "To avoid marketing"],
-      answerIndex: 1
-    },
-    {
-      q: "A brand that markets high-end headphones to music lovers is using:",
-      options: ["Demographic segmentation", "Psychographic segmentation", "Behavioural segmentation", "Geographic segmentation"],
-      answerIndex: 1
-    },
-    {
-      q: "Behavioural segmentation includes:",
-      options: ["Buying habits and brand loyalty", "Skin tone", "Accent", "Climate"],
-      answerIndex: 0
-    },
-    {
-      q: "A soft drink company targeting messaging to hot-weather regions is using:",
-      options: ["Behavioural segmentation", "Psychographic segmentation", "Geographic segmentation", "Random advertising"],
-      answerIndex: 2
-    },
-    {
-      q: "Which is an example of a psychographic trait?",
-      options: ["Postcode", "Income", "Lifestyle preference", "Age"],
-      answerIndex: 2
-    },
-    {
-      q: "A YouTube advert aimed at gamers aged 13–18 is using:",
-      options: ["Broad targeting", "Demographic and interest-based segmentation", "Geographic-only segmentation", "No segmentation"],
-      answerIndex: 1
-    },
-    {
-      q: "Which of these would be the BEST evidence for behavioural segmentation?",
-      options: ["TV licence data", "Purchase history", "Birth certificates", "Postcodes"],
-      answerIndex: 1
-    },
-    {
-      q: "A company marketing different adverts to families and single adults is using:",
-      options: ["House style rules", "Lifestyle segmentation", "Demographic segmentation", "Casting decisions"],
-      answerIndex: 2
-    },
-    {
-      q: "Age rating systems (e.g., 12, 16, 18) help producers understand:",
-      options: ["Production budgets", "Audience age demographic", "Colour schemes", "File compression"],
-      answerIndex: 1
-    },
-    {
-      q: "A clothing brand targeting teenagers who follow streetwear trends uses:",
-      options: ["Psychographic segmentation", "Geographic segmentation", "Income segmentation", "Behavioural segmentation only"],
-      answerIndex: 0
-    },
-    {
-      q: "Which combination represents ALL four main segmentation types?",
+      q: "Media codes are used in media products to:",
       options: [
-        "Genre, style, budget, purpose",
-        "Age, values, postcode, buying habits",
-        "Colour, typography, layout, format",
-        "Editing, lighting, sound, props"
+        "Control file size",
+        "Create meaning for the audience",
+        "Set the upload schedule",
+        "Define budget"
       ],
       answerIndex: 1
     },
     {
-      q: "A tourist board promoting holidays differently in summer and winter is using:",
-      options: ["Seasonal behavioural segmentation", "Demographic segmentation", "Psychographic segmentation", "Random promotion"],
+      q: "Technical codes include:",
+      options: ["Camera angles and lighting", "Character clothing", "Props", "Settings"],
       answerIndex: 0
     },
     {
-      q: "Why is audience segmentation important in advertising?",
+      q: "Symbolic codes include:",
+      options: ["Camera movement only", "Costume, colours and body language", "Editing transitions only", "Sound effects only"],
+      answerIndex: 1
+    },
+    {
+      q: "Written codes are mainly related to:",
+      options: ["Camera lenses", "Text, fonts and on-screen language", "Lighting rigs", "File formats"],
+      answerIndex: 1
+    },
+    {
+      q: "Which of the following is a technical code?",
+      options: ["Facial expression", "Dialogue", "Close-up shot", "Costume"],
+      answerIndex: 2
+    },
+    {
+      q: "Which is an example of a symbolic code in a horror film?",
       options: [
-        "It increases production time",
-        "It ensures adverts reach the right audience more effectively",
-        "It reduces the number of ideas",
-        "It stops user feedback"
+        "Jump cuts",
+        "High-angle shot",
+        "Dark costume and low lighting",
+        "Credits text"
+      ],
+      answerIndex: 2
+    },
+    {
+      q: "Red in a poster can symbolically represent:",
+      options: ["Calm and relaxation", "Danger or passion", "Cold weather", "Silence"],
+      answerIndex: 1
+    },
+    {
+      q: "A skull symbol is an example of:",
+      options: ["Written code", "Symbolic code", "Technical code", "Audio code"],
+      answerIndex: 1
+    },
+    {
+      q: "Using a low-angle shot of a character makes them appear:",
+      options: ["Weak", "Powerful or dominant", "Invisible", "Unimportant"],
+      answerIndex: 1
+    },
+    {
+      q: "Fast-paced editing in an action sequence is a:",
+      options: ["Symbolic code", "Technical code related to editing", "Written code", "Random choice"],
+      answerIndex: 1
+    },
+    {
+      q: "A formal serif font in a brochure is likely to communicate:",
+      options: ["Playfulness", "Seriousness and professionalism", "Confusion", "Humour only"],
+      answerIndex: 1
+    },
+    {
+      q: "Which is an example of a written code in a TV drama?",
+      options: ["Dialogue on screen as subtitles", "Handheld camera movement", "Character costume", "Weather conditions"],
+      answerIndex: 0
+    },
+    {
+      q: "Bright high-key lighting in a scene usually suggests:",
+      options: ["Horror and fear", "A cheerful, safe environment", "Mystery", "Invisible characters"],
+      answerIndex: 1
+    },
+    {
+      q: "An extreme close-up of a character’s eyes is used to:",
+      options: [
+        "Show the entire location",
+        "Focus on emotion and detail",
+        "Increase shot distance",
+        "Avoid symbolism"
       ],
       answerIndex: 1
     },
     {
-      q: "If a product is aimed at people with shared beliefs about the environment, this is:",
-      options: ["Demographic segmentation", "Psychographic segmentation", "Behavioural segmentation", "Geographic segmentation"],
-      answerIndex: 1
-    },
-    {
-      q: "Streaming services recommending shows based on viewing habits is an example of:",
-      options: ["Demographic segmentation", "Behavioural segmentation", "No segmentation", "Incorrect targeting"],
-      answerIndex: 1
-    },
-    {
-      q: "A campaign aimed at ‘parents in Nottingham’ is a mix of:",
-      options: ["Demographic + geographic segmentation", "Colour + typography", "Behavioural only", "No segmentation"],
+      q: "Which combination shows only technical codes?",
+      options: [
+        "Camera shots, camera movement, editing",
+        "Colour, symbols, costume",
+        "Fonts, on-screen text, headlines",
+        "Props, setting, colour"
+      ],
       answerIndex: 0
     },
     {
-      q: "Primary school educational software is targeted by:",
-      options: ["Random allocation", "Age demographic", "Psychographic preference only", "Climate region"],
+      q: "In a poster, using all-caps bold text for the film title is a:",
+      options: ["Symbolic code", "Technical code", "Written code", "Non-diegetic sound"],
+      answerIndex: 2
+    },
+    {
+      q: "The setting of a scene (e.g. a dark alley) is primarily a:",
+      options: ["Technical code", "Written code", "Symbolic code", "Audio code"],
+      answerIndex: 2
+    },
+    {
+      q: "Which of these is an example of an audio code?",
+      options: [
+        "Colour palette",
+        "Camera zoom",
+        "Non-diegetic music",
+        "Font choice"
+      ],
+      answerIndex: 2
+    },
+    {
+      q: "Slow, sad music in a scene is used to:",
+      options: ["Create tension", "Create a joyful mood", "Reinforce emotional meaning", "Confuse the audience"],
+      answerIndex: 2
+    },
+    {
+      q: "A newsreader wearing a smart suit is a:",
+      options: ["Technical camera choice", "Symbolic code suggesting professionalism", "Written code", "Editing decision"],
       answerIndex: 1
     },
     {
-      q: "A fitness brand promoting different workouts to beginners and experts is using:",
-      options: ["Skill-level behavioural segmentation", "Demographic only", "Psychographic only", "Geographic segmentation"],
-      answerIndex: 0
+      q: "Why is it important to understand media codes when creating a product?",
+      options: [
+        "To make files smaller",
+        "To create the intended meaning for the target audience",
+        "To increase printing speed",
+        "To avoid using colour"
+      ],
+      answerIndex: 1
     },
     {
-      q: "Audience segmentation allows producers to:",
-      options: ["Make products illegal", "Design content that meets audience needs and expectations", "Stop advertising", "Avoid planning"],
+      q: "Which is an example of mise-en-scène?",
+      options: [
+        "Soundtrack only",
+        "Camera frame rate",
+        "Everything placed in front of the camera, such as props and costume",
+        "File export settings"
+      ],
+      answerIndex: 2
+    },
+    {
+      q: "Handheld shaky camera movement in a chase scene is used to:",
+      options: [
+        "Calm the scene",
+        "Create realism and tension",
+        "Remove tension",
+        "Show slow motion"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A montage sequence created by editing together short shots is a use of:",
+      options: ["Symbolic codes", "Editing as a technical code", "Written codes only", "Lighting codes only"],
+      answerIndex: 1
+    },
+    {
+      q: "Which best describes media codes overall?",
+      options: [
+        "Rules about export formats",
+        "Ways in which meaning is created through technical, symbolic and written elements",
+        "Only text used in media",
+        "Only sound effects"
+      ],
       answerIndex: 1
     }
   ]
 },
 
+    cameraLighting: {
+  id: "cameraLighting",
+  label: "18 – Camera & Lighting",
+  questions: [
+    {
+      q: "A close-up (CU) shot mainly shows:",
+      options: [
+        "A character from head to toe",
+        "A subject’s face or important detail filling most of the frame",
+        "A very wide landscape",
+        "Only props on a table"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A long shot (LS) is used to:",
+      options: [
+        "Show tiny details only",
+        "Show the subject’s whole body and some of the surroundings",
+        "Show only their eyes",
+        "Remove the background completely"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A high-angle shot (camera looking down) often makes a subject appear:",
+      options: ["Powerful and dominant", "Weak, vulnerable or insignificant", "Invisible", "Taller"],
+      answerIndex: 1
+    },
+    {
+      q: "Key light in a three-point lighting setup is:",
+      options: [
+        "The main, strongest light that defines the subject",
+        "Only used for backgrounds",
+        "Always placed behind the camera",
+        "A coloured light used for effects only"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Fill light in a three-point setup is used to:",
+      options: [
+        "Add strong shadows",
+        "Soften shadows created by the key light",
+        "Light the background only",
+        "Blind the actors"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Back light (or rim light) mainly:",
+      options: [
+        "Lights the floor",
+        "Separates the subject from the background by adding a rim of light",
+        "Turns everything dark",
+        "Only lights the ceiling"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Low-key lighting with lots of contrast and shadows is often used to create:",
+      options: [
+        "A bright, cheerful mood",
+        "A tense, mysterious or dramatic mood",
+        "No mood at all",
+        "Only daylight scenes"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which camera movement follows a subject while the camera is physically moved on wheels or a rig?",
+      options: ["Pan", "Tilt", "Tracking / dolly shot", "Static shot"],
+      answerIndex: 2
+    },
+    {
+      q: "Why is it important to consider lighting in media production?",
+      options: [
+        "Lighting only affects sound",
+        "Lighting controls visibility, mood and focus within the frame",
+        "Lighting is only a legal requirement",
+        "Lighting is never planned"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which option shows good practice for camera and lighting on set?",
+      options: [
+        "Ignoring trip hazards from cables",
+        "Using stable supports, safe cabling and testing lights before filming",
+        "Pointing bright lights directly into people’s eyes at close range",
+        "Never checking exposure"
+      ],
+      answerIndex: 1
+    }
+  ]
+},
 
+    miseEnSceneAudioAnimation: {
+  id: "miseEnSceneAudioAnimation",
+  label: "19 – Mise en Scene, Audio & Animation",
+  questions: [
+    {
+      q: "Mise en scène refers to:",
+      options: [
+        "Only the soundtrack",
+        "Everything placed in front of the camera, such as setting, costume and props",
+        "Only camera movements",
+        "Only editing transitions"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which is NOT part of mise en scène?",
+      options: ["Lighting", "Costume", "Dialogue editing", "Props"],
+      answerIndex: 2
+    },
+    {
+      q: "Diegetic sound is:",
+      options: [
+        "Sound that characters in the scene can hear, such as dialogue or on-screen music",
+        "Only background music added later",
+        "Narration heard only by the audience",
+        "Always recorded in a studio"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Non-diegetic sound is:",
+      options: [
+        "Sound that comes from the world of the story",
+        "Sound added for the audience only, such as a film score",
+        "Only dialogue",
+        "Any sound recorded on location"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Foley artists mainly create:",
+      options: [
+        "Colour grading presets",
+        "Synchronous sound effects like footsteps to match the visuals",
+        "Only subtitles",
+        "3D models"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which example shows mise en scène reinforcing character status?",
+      options: [
+        "A villain in dark costume surrounded by shadows",
+        "A loud soundtrack with no visuals",
+        "A blank screen with text only",
+        "A random zoom with no lighting"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Animation can be used in media products to:",
+      options: [
+        "Add movement to graphics, explain ideas or create characters",
+        "Remove all visuals",
+        "Replace microphones",
+        "Print posters automatically"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Which is an example of combining audio and animation effectively?",
+      options: [
+        "Muted cartoon",
+        "Animated explainer video with narration and sound effects",
+        "Static logo with no sound",
+        "Only written subtitles"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Why is audio important in media productions?",
+      options: [
+        "It is optional and rarely noticed",
+        "It helps create mood, convey information and support realism",
+        "It only fills silence",
+        "It replaces visuals completely"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which statement about mise en scène is TRUE?",
+      options: [
+        "It is carefully planned to support genre, character and narrative",
+        "It happens by accident",
+        "It only applies to documentaries",
+        "It is unrelated to audience expectations"
+      ],
+      answerIndex: 0
+    }
+  ]
+},
 
+    movementTransitionsInteractivity: {
+  id: "movementTransitionsInteractivity",
+  label: "20 – Movement, Transitions & Interactivity",
+  questions: [
+    {
+      q: "A pan is a camera movement where the camera:",
+      options: [
+        "Moves physically towards the subject",
+        "Rotates left or right from a fixed position",
+        "Tilts up and down",
+        "Is held still on a tripod"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A tilt is when the camera:",
+      options: [
+        "Moves sideways on tracks",
+        "Rotates up or down from a fixed point",
+        "Zooms in and out",
+        "Stays locked off"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A cut between two shots is:",
+      options: [
+        "A transition where one shot instantly replaces another",
+        "A slowly fading change between shots",
+        "Always a visual effect",
+        "Only used in trailers"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "A cross-fade or dissolve transition:",
+      options: [
+        "Instantly jumps between shots",
+        "Gradually blends one shot into another",
+        "Always indicates a flashback",
+        "Is used only for adverts"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Why might a director use a fast series of quick cuts?",
+      options: [
+        "To slow the pace",
+        "To create excitement or tension",
+        "To make the scene boring",
+        "To hide all action"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Interactivity in digital media products means:",
+      options: [
+        "The audience can only watch passively",
+        "Users can make choices or control aspects of the media",
+        "Media never responds to user input",
+        "Only creators can interact"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which of the following is an interactive feature on a website?",
+      options: [
+        "Static printed poster",
+        "Clickable navigation buttons and embedded quizzes",
+        "A still image only",
+        "A TV advert"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "In a game, player-controlled movement of the camera is an example of:",
+      options: [
+        "Pre-production work",
+        "Interactivity affecting point of view",
+        "Only editing",
+        "Traditional print media"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which transition is often used to show a change in time or location?",
+      options: ["Straight cut only", "Fade to black or fade in", "No transition", "Random glitch"],
+      answerIndex: 1
+    },
+    {
+      q: "Why must movement, transitions and interactivity be planned carefully?",
+      options: [
+        "They have no impact on audience experience",
+        "They affect pacing, clarity and how engaged the audience feels",
+        "They replace story",
+        "They are purely random"
+      ],
+      answerIndex: 1
+    }
+  ]
+},
 
-mindMapsMoodBoards: {
+    colourGraphicsTypography: {
+  id: "colourGraphicsTypography",
+  label: "21 – Colour, Graphics & Typography",
+  questions: [
+    {
+      q: "Colour in media products is mainly used to:",
+      options: ["Fill space randomly", "Communicate mood and meaning", "Show technical errors", "Replace text"],
+      answerIndex: 1
+    },
+    {
+      q: "Warm colours such as red and orange often represent:",
+      options: ["Calm and sadness", "Energy, passion or danger", "Coldness", "Neutrality"],
+      answerIndex: 1
+    },
+    {
+      q: "Cool colours like blue and green typically create a sense of:",
+      options: ["Warmth", "Calm and peace", "Aggression", "Urgency"],
+      answerIndex: 1
+    },
+    {
+      q: "A serif font is characterised by:",
+      options: ["Small decorative strokes", "No decorative elements", "Graffiti style", "Animated letters"],
+      answerIndex: 0
+    },
+    {
+      q: "Sans-serif fonts are typically used for:",
+      options: ["Formal documents", "Clear, modern, digital displays", "Scriptwriting only", "Only posters"],
+      answerIndex: 1
+    },
+    {
+      q: "Typography affects:",
+      options: ["Camera focus", "Audience readability and tone", "Audio loudness", "Sound effects"],
+      answerIndex: 1
+    },
+    {
+      q: "High contrast between text and background helps:",
+      options: ["Aesthetic only", "Accessibility and readability", "Audio mixing", "Colour matching"],
+      answerIndex: 1
+    },
+    {
+      q: "The term ‘house style’ refers to:",
+      options: ["A building’s design", "Consistent branding elements such as colours, fonts and logos", "Camera shots", "Licensing laws"],
+      answerIndex: 1
+    },
+    {
+      q: "A brand using the same colour scheme across all materials:",
+      options: ["Is inconsistent", "Strengthens brand identity", "Breaks guidelines", "Confuses the audience"],
+      answerIndex: 1
+    },
+    {
+      q: "Vector graphics are best for:",
+      options: ["Smooth scaling without pixelation", "Fixed-size photos only", "Audio editing", "Reducing frame rates"],
+      answerIndex: 0
+    },
+    {
+      q: "Raster graphics are made up of:",
+      options: ["Points", "Pixels", "Paths", "Vectors"],
+      answerIndex: 1
+    },
+    {
+      q: "Which is an example of a vector graphic?",
+      options: ["Logo created in Illustrator", "JPEG photo of a landscape", "MP3 audio file", "Storyboard sketch"],
+      answerIndex: 0
+    },
+    {
+      q: "The CMYK colour model is mainly used for:",
+      options: ["Digital screens", "Print production", "Audio mixing", "Film editing"],
+      answerIndex: 1
+    },
+    {
+      q: "RGB colour is used for:",
+      options: ["Screens and digital displays", "Printing", "Casting", "Storyboard layout"],
+      answerIndex: 0
+    },
+    {
+      q: "Which of the following improves readability the MOST?",
+      options: ["Light text on light background", "Dark text on dark background", "High contrast text and background", "Neon colours always"],
+      answerIndex: 2
+    },
+    {
+      q: "Typography hierarchy helps:",
+      options: ["Random font choice", "Direct the viewer’s attention", "Colour correction", "Technical editing"],
+      answerIndex: 1
+    },
+    {
+      q: "A script font is usually used for:",
+      options: ["Formal long paragraphs", "Stylish headings or logos", "Body text", "Captions"],
+      answerIndex: 1
+    },
+    {
+      q: "Icons and symbols are useful because they:",
+      options: ["Replace colour theory", "Quickly communicate meaning without text", "Reduce resolution", "Control sound"],
+      answerIndex: 1
+    },
+    {
+      q: "A monochrome colour scheme uses:",
+      options: ["One colour and its shades", "Only two colours", "Random colours", "Every colour at full saturation"],
+      answerIndex: 0
+    },
+    {
+      q: "Complementary colours are:",
+      options: ["Next to each other on the colour wheel", "Opposite on the colour wheel providing strong contrast", "Always black and white", "Only warm colours"],
+      answerIndex: 1
+    },
+    {
+      q: "Readability of text depends on:",
+      options: ["Font choice, spacing, size and contrast", "Storyboarding", "Audio levels", "Frame rates"],
+      answerIndex: 0
+    },
+    {
+      q: "Why might a designer choose a sans-serif font for mobile content?",
+      options: ["It looks old-fashioned", "It is clearer at small sizes on screens", "It is required by law", "It reduces file size"],
+      answerIndex: 1
+    },
+    {
+      q: "Graphics in a poster should be:",
+      options: ["Low resolution", "Relevant and high quality", "Random stock images", "Always pixelated"],
+      answerIndex: 1
+    },
+    {
+      q: "A poorly chosen colour scheme may:",
+      options: ["Improve readability", "Confuse the audience and weaken the message", "Fix legal issues", "Replace scriptwriting"],
+      answerIndex: 1
+    },
+    {
+      q: "The purpose of colour theory in media design is to:",
+      options: ["Remove style", "Help communicate mood and meaning effectively", "Make products look identical", "Avoid creativity"],
+      answerIndex: 1
+    }
+  ]
+},
+
+    workplans: {
+  id: "workplans",
+  label: "22 – Components of Workplans",
+  questions: [
+    {
+      q: "A workplan is used to:",
+      options: ["Design graphics", "Plan tasks and timings for a project", "Edit the final product", "Communicate mood"],
+      answerIndex: 1
+    },
+    {
+      q: "Which of the following is a key component of a workplan?",
+      options: ["Camera angle", "Contingencies", "Colour palette", "Script dialogue"],
+      answerIndex: 1
+    },
+    {
+      q: "Tasks in a workplan should be:",
+      options: ["Unnamed", "Clear and specific", "Random", "Written as full paragraphs"],
+      answerIndex: 1
+    },
+    {
+      q: "A contingency in a workplan refers to:",
+      options: ["A backup plan for delays or problems", "Final export settings", "Sound design", "Advertising strategy"],
+      answerIndex: 0
+    },
+    {
+      q: "Milestones in a workplan represent:",
+      options: ["Technical errors", "Key stages of progress", "Font selection", "Legal checks"],
+      answerIndex: 1
+    },
+    {
+      q: "Workplans help ensure that:",
+      options: ["Scripts are ignored", "Deadlines are met", "Only one person works", "The product becomes interactive automatically"],
+      answerIndex: 1
+    },
+    {
+      q: "The timeline section of a workplan includes:",
+      options: ["Visual style choices", "Start and end dates", "Dialogue scripts", "Target audience"],
+      answerIndex: 1
+    },
+    {
+      q: "A Gantt chart is:",
+      options: ["A type of workplan showing tasks over time", "A mood board", "A storyboard", "An audio script"],
+      answerIndex: 0
+    },
+    {
+      q: "Dependencies in a workplan show:",
+      options: ["Which tasks rely on previous ones", "Camera angles", "Colour options", "Legal issues"],
+      answerIndex: 0
+    },
+    {
+      q: "A workplan resource list should include:",
+      options: ["Fonts only", "Equipment, software and people needed", "Random ideas", "Advertising budget"],
+      answerIndex: 1
+    },
+    {
+      q: "A workplan should be updated:",
+      options: ["After the project is finished only", "Throughout the project", "Never", "Once a year"],
+      answerIndex: 1
+    },
+    {
+      q: "Contingency time allows for:",
+      options: ["Fixing unexpected issues", "Choosing fonts", "Changing the target audience", "Ignoring the client"],
+      answerIndex: 0
+    },
+    {
+      q: "A workplan helps avoid:",
+      options: ["Communication", "Last-minute rush and disorganisation", "Using graphics", "Creating scripts"],
+      answerIndex: 1
+    },
+    {
+      q: "Which document is MOST closely linked to a workplan?",
+      options: ["Storyboard", "Risk assessment", "Schedule", "Script"],
+      answerIndex: 2
+    },
+    {
+      q: "If a task cannot start until another one finishes, this is called a:",
+      options: ["Dependency", "Milestone", "Asset", "Code"],
+      answerIndex: 0
+    },
+    {
+      q: "Who typically creates the workplan?",
+      options: ["The client only", "The production team", "Audience members", "Advertisers"],
+      answerIndex: 1
+    },
+    {
+      q: "Workplans are MOST useful in:",
+      options: ["The production and planning stages", "Distribution", "Audience testing only", "Legal departments only"],
+      answerIndex: 0
+    },
+    {
+      q: "The purpose of setting milestones is to:",
+      options: ["Guarantee viral success", "Track major progress points", "Choose colours", "Ignore deadlines"],
+      answerIndex: 1
+    },
+    {
+      q: "A timeline in a workplan MUST include:",
+      options: ["Asset lists", "Specific dates for each task", "Shot lists", "Mood references"],
+      answerIndex: 1
+    },
+    {
+      q: "A workplan helps communicate:",
+      options: ["The entire legal framework", "Who does what and when", "Music choices", "All editing commands"],
+      answerIndex: 1
+    },
+    {
+      q: "A contingency might include:",
+      options: ["Extra days for delays", "Colour schemes", "Fonts", "Camera angles"],
+      answerIndex: 0
+    },
+    {
+      q: "Which is an example of a dependency?",
+      options: [
+        "Editing cannot start until filming is complete",
+        "Choosing fonts first",
+        "Writing scripts after exporting",
+        "Making a poster before brainstorming"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "A resource in a workplan could include:",
+      options: ["A storyline", "A camera, actors or software", "A mood reference", "Colour values"],
+      answerIndex: 1
+    },
+    {
+      q: "Which statement about workplans is TRUE?",
+      options: [
+        "They guarantee project success regardless of effort",
+        "They help organise tasks, resources and deadlines",
+        "They remove the need for planning",
+        "They are only used in film production"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A lack of a workplan often leads to:",
+      options: ["Better organisation", "Missed deadlines and confusion", "Faster production", "Accurate scheduling"],
+      answerIndex: 1
+    }
+  ]
+},
+
+    mindMapsMoodBoards: {
   id: "mindMapsMoodBoards",
   label: "23 – Mind Maps & Mood Boards",
   questions: [
@@ -1573,512 +3278,7 @@ mindMapsMoodBoards: {
   ]
 },
 
-
-
-workplans: {
-  id: "workplans",
-  label: "22 – Components of Workplans",
-  questions: [
-    {
-      q: "A workplan is used to:",
-      options: ["Design graphics", "Plan tasks and timings for a project", "Edit the final product", "Communicate mood"],
-      answerIndex: 1
-    },
-    {
-      q: "Which of the following is a key component of a workplan?",
-      options: ["Camera angle", "Contingencies", "Colour palette", "Script dialogue"],
-      answerIndex: 1
-    },
-    {
-      q: "Tasks in a workplan should be:",
-      options: ["Unnamed", "Clear and specific", "Random", "Written as full paragraphs"],
-      answerIndex: 1
-    },
-    {
-      q: "A contingency in a workplan refers to:",
-      options: ["A backup plan for delays or problems", "Final export settings", "Sound design", "Advertising strategy"],
-      answerIndex: 0
-    },
-    {
-      q: "Milestones in a workplan represent:",
-      options: ["Technical errors", "Key stages of progress", "Font selection", "Legal checks"],
-      answerIndex: 1
-    },
-    {
-      q: "Workplans help ensure that:",
-      options: ["Scripts are ignored", "Deadlines are met", "Only one person works", "The product becomes interactive automatically"],
-      answerIndex: 1
-    },
-    {
-      q: "The timeline section of a workplan includes:",
-      options: ["Visual style choices", "Start and end dates", "Dialogue scripts", "Target audience"],
-      answerIndex: 1
-    },
-    {
-      q: "A Gantt chart is:",
-      options: ["A type of workplan showing tasks over time", "A mood board", "A storyboard", "An audio script"],
-      answerIndex: 0
-    },
-    {
-      q: "Dependencies in a workplan show:",
-      options: ["Which tasks rely on previous ones", "Camera angles", "Colour options", "Legal issues"],
-      answerIndex: 0
-    },
-    {
-      q: "A workplan resource list should include:",
-      options: ["Fonts only", "Equipment, software and people needed", "Random ideas", "Advertising budget"],
-      answerIndex: 1
-    },
-    {
-      q: "A workplan should be updated:",
-      options: ["After the project is finished only", "Throughout the project", "Never", "Once a year"],
-      answerIndex: 1
-    },
-    {
-      q: "Contingency time allows for:",
-      options: ["Fixing unexpected issues", "Choosing fonts", "Changing the target audience", "Ignoring the client"],
-      answerIndex: 0
-    },
-    {
-      q: "A workplan helps avoid:",
-      options: ["Communication", "Last-minute rush and disorganisation", "Using graphics", "Creating scripts"],
-      answerIndex: 1
-    },
-    {
-      q: "Which document is MOST closely linked to a workplan?",
-      options: ["Storyboard", "Risk assessment", "Schedule", "Script"],
-      answerIndex: 2
-    },
-    {
-      q: "If a task cannot start until another one finishes, this is called a:",
-      options: ["Dependency", "Milestone", "Asset", "Code"],
-      answerIndex: 0
-    },
-    {
-      q: "Who typically creates the workplan?",
-      options: ["The client only", "The production team", "Audience members", "Advertisers"],
-      answerIndex: 1
-    },
-    {
-      q: "Workplans are MOST useful in:",
-      options: ["The production and planning stages", "Distribution", "Audience testing only", "Legal departments only"],
-      answerIndex: 0
-    },
-    {
-      q: "The purpose of setting milestones is to:",
-      options: ["Guarantee viral success", "Track major progress points", "Choose colours", "Ignore deadlines"],
-      answerIndex: 1
-    },
-    {
-      q: "A timeline in a workplan MUST include:",
-      options: ["Asset lists", "Specific dates for each task", "Shot lists", "Mood references"],
-      answerIndex: 1
-    },
-    {
-      q: "A workplan helps communicate:",
-      options: ["The entire legal framework", "Who does what and when", "Music choices", "All editing commands"],
-      answerIndex: 1
-    },
-    {
-      q: "A contingency might include:",
-      options: ["Extra days for delays", "Colour schemes", "Fonts", "Camera angles"],
-      answerIndex: 0
-    },
-    {
-      q: "Which is an example of a dependency?",
-      options: [
-        "Editing cannot start until filming is complete",
-        "Choosing fonts first",
-        "Writing scripts after exporting",
-        "Making a poster before brainstorming"
-      ],
-      answerIndex: 0
-    },
-    {
-      q: "A resource in a workplan could include:",
-      options: ["A storyline", "A camera, actors or software", "A mood reference", "Colour values"],
-      answerIndex: 1
-    },
-    {
-      q: "Which statement about workplans is TRUE?",
-      options: [
-        "They guarantee project success regardless of effort",
-        "They help organise tasks, resources and deadlines",
-        "They remove the need for planning",
-        "They are only used in film production"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "A lack of a workplan often leads to:",
-      options: ["Better organisation", "Missed deadlines and confusion", "Faster production", "Accurate scheduling"],
-      answerIndex: 1
-    }
-  ]
-},
-
-
-
-colourGraphicsTypography: {
-  id: "colourGraphicsTypography",
-  label: "21 – Colour, Graphics & Typography",
-  questions: [
-    {
-      q: "Colour in media products is mainly used to:",
-      options: ["Fill space randomly", "Communicate mood and meaning", "Show technical errors", "Replace text"],
-      answerIndex: 1
-    },
-    {
-      q: "Warm colours such as red and orange often represent:",
-      options: ["Calm and sadness", "Energy, passion or danger", "Coldness", "Neutrality"],
-      answerIndex: 1
-    },
-    {
-      q: "Cool colours like blue and green typically create a sense of:",
-      options: ["Warmth", "Calm and peace", "Aggression", "Urgency"],
-      answerIndex: 1
-    },
-    {
-      q: "A serif font is characterised by:",
-      options: ["Small decorative strokes", "No decorative elements", "Graffiti style", "Animated letters"],
-      answerIndex: 0
-    },
-    {
-      q: "Sans-serif fonts are typically used for:",
-      options: ["Formal documents", "Clear, modern, digital displays", "Scriptwriting only", "Only posters"],
-      answerIndex: 1
-    },
-    {
-      q: "Typography affects:",
-      options: ["Camera focus", "Audience readability and tone", "Audio loudness", "Sound effects"],
-      answerIndex: 1
-    },
-    {
-      q: "High contrast between text and background helps:",
-      options: ["Aesthetic only", "Accessibility and readability", "Audio mixing", "Colour matching"],
-      answerIndex: 1
-    },
-    {
-      q: "The term ‘house style’ refers to:",
-      options: ["A building’s design", "Consistent branding elements such as colours, fonts and logos", "Camera shots", "Licensing laws"],
-      answerIndex: 1
-    },
-    {
-      q: "A brand using the same colour scheme across all materials:",
-      options: ["Is inconsistent", "Strengthens brand identity", "Breaks guidelines", "Confuses the audience"],
-      answerIndex: 1
-    },
-    {
-      q: "Vector graphics are best for:",
-      options: ["Smooth scaling without pixelation", "Fixed-size photos only", "Audio editing", "Reducing frame rates"],
-      answerIndex: 0
-    },
-    {
-      q: "Raster graphics are made up of:",
-      options: ["Points", "Pixels", "Paths", "Vectors"],
-      answerIndex: 1
-    },
-    {
-      q: "Which is an example of a vector graphic?",
-      options: ["Logo created in Illustrator", "JPEG photo of a landscape", "MP3 audio file", "Storyboard sketch"],
-      answerIndex: 0
-    },
-    {
-      q: "The CMYK colour model is mainly used for:",
-      options: ["Digital screens", "Print production", "Audio mixing", "Film editing"],
-      answerIndex: 1
-    },
-    {
-      q: "RGB colour is used for:",
-      options: ["Screens and digital displays", "Printing", "Casting", "Storyboard layout"],
-      answerIndex: 0
-    },
-    {
-      q: "Which of the following improves readability the MOST?",
-      options: ["Light text on light background", "Dark text on dark background", "High contrast text and background", "Neon colours always"],
-      answerIndex: 2
-    },
-    {
-      q: "Typography hierarchy helps:",
-      options: ["Random font choice", "Direct the viewer’s attention", "Colour correction", "Technical editing"],
-      answerIndex: 1
-    },
-    {
-      q: "A script font is usually used for:",
-      options: ["Formal long paragraphs", "Stylish headings or logos", "Body text", "Captions"],
-      answerIndex: 1
-    },
-    {
-      q: "Icons and symbols are useful because they:",
-      options: ["Replace colour theory", "Quickly communicate meaning without text", "Reduce resolution", "Control sound"],
-      answerIndex: 1
-    },
-    {
-      q: "A monochrome colour scheme uses:",
-      options: ["One colour and its shades", "Only two colours", "Random colours", "Every colour at full saturation"],
-      answerIndex: 0
-    },
-    {
-      q: "Complementary colours are:",
-      options: ["Next to each other on the colour wheel", "Opposite on the colour wheel providing strong contrast", "Always black and white", "Only warm colours"],
-      answerIndex: 1
-    },
-    {
-      q: "Readability of text depends on:",
-      options: ["Font choice, spacing, size and contrast", "Storyboarding", "Audio levels", "Frame rates"],
-      answerIndex: 0
-    },
-    {
-      q: "Why might a designer choose a sans-serif font for mobile content?",
-      options: ["It looks old-fashioned", "It is clearer at small sizes on screens", "It is required by law", "It reduces file size"],
-      answerIndex: 1
-    },
-    {
-      q: "Graphics in a poster should be:",
-      options: ["Low resolution", "Relevant and high quality", "Random stock images", "Always pixelated"],
-      answerIndex: 1
-    },
-    {
-      q: "A poorly chosen colour scheme may:",
-      options: ["Improve readability", "Confuse the audience and weaken the message", "Fix legal issues", "Replace scriptwriting"],
-      answerIndex: 1
-    },
-    {
-      q: "The purpose of colour theory in media design is to:",
-      options: ["Remove style", "Help communicate mood and meaning effectively", "Make products look identical", "Avoid creativity"],
-      answerIndex: 1
-    }
-  ]
-},
-
-
-
-storyboardsVisualisationsWireframes: {
-  id: "storyboardsVisualisationsWireframes",
-  label: "25 – Storyboards, Visualisations & Wireframes",
-  questions: [
-    {
-      q: "The main purpose of a storyboard is to:",
-      options: [
-        "Plan camera shots and sequence for moving image products",
-        "Store asset file paths",
-        "Write full dialogue and scripts",
-        "Record audience feedback"
-      ],
-      answerIndex: 0
-    },
-    {
-      q: "Which of the following is usually included on a storyboard?",
-      options: [
-        "Shot sketches, shot type and camera movement",
-        "Only file formats",
-        "Legal information only",
-        "Colour profiles"
-      ],
-      answerIndex: 0
-    },
-    {
-      q: "What does a visualisation diagram show?",
-      options: [
-        "The final timeline of a video",
-        "The layout and appearance of a single still image or graphic",
-        "Audio levels over time",
-        "User test results"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "A wireframe is BEST described as:",
-      options: [
-        "A detailed final design",
-        "A basic layout of a web page or app showing structure and position of elements",
-        "A soundtrack plan",
-        "A list of assets"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "Which pre-production document is MOST suitable to plan a website’s page layout?",
-      options: ["Storyboard", "Wireframe", "Script", "Risk assessment"],
-      answerIndex: 1
-    },
-    {
-      q: "Which item is MOST likely to appear on a storyboard panel?",
-      options: [
-        "Sketch of the frame",
-        "Budget spreadsheet",
-        "HTML code",
-        "Hardware list"
-      ],
-      answerIndex: 0
-    },
-    {
-      q: "Annotations on a storyboard are used to:",
-      options: [
-        "Decorate the drawing",
-        "Explain camera movement, transitions and sound",
-        "Show export settings",
-        "Write file names only"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "Visualisation diagrams are commonly used for:",
-      options: [
-        "Planning poster designs and DVD covers",
-        "Audio production only",
-        "Legal documents",
-        "Testing websites"
-      ],
-      answerIndex: 0
-    },
-    {
-      q: "A wireframe normally does NOT include:",
-      options: ["Real imagery and final colours", "Navigation menus", "Content boxes", "Logo position"],
-      answerIndex: 0
-    },
-    {
-      q: "Storyboards help the production team because they:",
-      options: [
-        "Reduce the need for actors",
-        "Provide a visual plan of each shot before filming",
-        "Automatically film the scenes",
-        "Replace the script"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "Which of the following information is LEAST important on a storyboard?",
-      options: ["Shot number", "Shot type", "Colour profile of the camera", "Description of action"],
-      answerIndex: 2
-    },
-    {
-      q: "A visualisation diagram for a magazine cover is likely to show:",
-      options: [
-        "Placement of masthead, images and cover lines",
-        "Camera framing for shots",
-        "Video transitions",
-        "Full article text"
-      ],
-      answerIndex: 0
-    },
-    {
-      q: "Wireframes support responsive design by:",
-      options: [
-        "Showing approximate layout for different screen sizes",
-        "Exporting code automatically",
-        "Recording analytics",
-        "Changing camera angles"
-      ],
-      answerIndex: 0
-    },
-    {
-      q: "Which pre-production document is best for planning a TV advert?",
-      options: ["Wireframe", "Storyboard", "Mood board only", "Asset log"],
-      answerIndex: 1
-    },
-    {
-      q: "Storyboards frequently use which format?",
-      options: ["Paragraphs only", "A sequence of numbered frames", "Audio-only notes", "Code blocks"],
-      answerIndex: 1
-    },
-    {
-      q: "Visualisation diagrams are MOST useful for:",
-      options: [
-        "Showing the layout idea for a single screen or page",
-        "Recording test results",
-        "Scheduling tasks",
-        "Writing dialogue"
-      ],
-      answerIndex: 0
-    },
-    {
-      q: "A wireframe must clearly show:",
-      options: [
-        "Precise colours and fonts",
-        "Where key elements such as headers, images and buttons will go",
-        "Exact wording of all text",
-        "Final audio mix"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "Which advantage do storyboards provide?",
-      options: [
-        "They guarantee no reshoots",
-        "They reduce confusion on set by providing a shared visual plan",
-        "They replace camera equipment",
-        "They remove the need for actors"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "On a storyboard, arrows around the camera indicate:",
-      options: [
-        "Lighting changes",
-        "Camera movement such as pan or tilt",
-        "Script changes",
-        "Audio level"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "Visualisation diagrams are often created:",
-      options: ["During distribution", "During early design and planning", "After filming", "After user testing"],
-      answerIndex: 1
-    },
-    {
-      q: "Wireframes help developers because they:",
-      options: [
-        "Provide a clear structure to build from before detailed design",
-        "Control server access",
-        "Mix audio automatically",
-        "Allocate budgets"
-      ],
-      answerIndex: 0
-    },
-    {
-      q: "Which of these would you MOST expect to see on a storyboard for an advert?",
-      options: [
-        "List of fonts",
-        "Shot sketches with action and dialogue notes",
-        "CSS code",
-        "Asset log IDs"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "Why are visualisation diagrams shown to clients?",
-      options: [
-        "To finalise legal contracts",
-        "To check they like the proposed visual layout before full production",
-        "To confirm export formats",
-        "To demonstrate code quality"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "Which document would be BEST to show how a mobile app screen layout changes between pages?",
-      options: ["Storyboard", "Wireframe", "Script", "Risk assessment"],
-      answerIndex: 1
-    },
-    {
-      q: "Storyboards, visualisation diagrams and wireframes are all used for:",
-      options: [
-        "Final distribution",
-        "Pre-production planning and communication of ideas",
-        "Audience testing only",
-        "Encoding files"
-      ],
-      answerIndex: 1
-    }
-  ]
-},
-
-
-
-
-assetLogsFlowchartsScripts: {
+    assetLogsFlowchartsScripts: {
   id: "assetLogsFlowchartsScripts",
   label: "24 – Asset Logs, Flow Charts & Scripts",
   questions: [
@@ -2305,214 +3505,336 @@ assetLogsFlowchartsScripts: {
   ]
 },
 
-
-
-
-distributionPlatformsMedia: {
-  id: "distributionPlatformsMedia",
-  label: "30 – Distribution Platforms & Media",
+    storyboardsVisualisationsWireframes: {
+  id: "storyboardsVisualisationsWireframes",
+  label: "25 – Storyboards, Visualisations & Wireframes",
   questions: [
     {
-      q: "Distribution in media refers to:",
+      q: "The main purpose of a storyboard is to:",
       options: [
-        "Editing footage",
-        "How the product is delivered to the audience",
-        "Creating scripts",
-        "Designing logos"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "Which of the following is a digital distribution platform?",
-      options: ["Cinema only", "Streaming services like Netflix", "Printed posters", "Billboards"],
-      answerIndex: 1
-    },
-    {
-      q: "Physical distribution of media includes:",
-      options: ["DVDs and Blu-ray discs", "Social media posts", "Websites", "Streaming apps"],
-      answerIndex: 0
-    },
-    {
-      q: "An advantage of online distribution is:",
-      options: [
-        "Very limited reach",
-        "Global access and on-demand viewing",
-        "Fixed schedule only",
-        "No interactivity"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "Which platform is best suited for short, viral video content?",
-      options: ["Radio", "TikTok", "Print magazines", "Billboards"],
-      answerIndex: 1
-    },
-    {
-      q: "Which distribution platform would be MOST suitable for an independent short film to reach a global audience?",
-      options: ["Local newspaper", "International streaming or video-sharing site", "School noticeboard", "Bus stop poster"],
-      answerIndex: 1
-    },
-    {
-      q: "Simultaneous release of a film in cinemas and on streaming is known as:",
-      options: ["Single-platform release", "Multi-platform release", "Print-only release", "Local-only release"],
-      answerIndex: 1
-    },
-    {
-      q: "Which is a disadvantage of physical distribution?",
-      options: [
-        "Takes up space and costs money to produce",
-        "No printing required",
-        "Instant updates",
-        "Easy global reach"
+        "Plan camera shots and sequence for moving image products",
+        "Store asset file paths",
+        "Write full dialogue and scripts",
+        "Record audience feedback"
       ],
       answerIndex: 0
     },
     {
-      q: "Broadcast distribution includes:",
-      options: ["Radio and TV channels", "USB drives", "Posters", "Leaflets"],
-      answerIndex: 0
-    },
-    {
-      q: "On-demand distribution allows users to:",
+      q: "Which of the following is usually included on a storyboard?",
       options: [
-        "Watch only at scheduled times",
-        "Choose when and where to access content",
-        "Only access in cinemas",
-        "Use DVDs only"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "Social media is a powerful distribution platform because it:",
-      options: [
-        "Has no analytics",
-        "Encourages sharing and interaction",
-        "Cannot be used on phones",
-        "Is always offline"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "A podcast is typically distributed via:",
-      options: ["Streaming and download platforms", "Printed booklets", "Cinemas", "Posters"],
-      answerIndex: 0
-    },
-    {
-      q: "Which of the following describes cross-media distribution?",
-      options: [
-        "Using only one channel",
-        "Using multiple platforms such as TV, social media and print together",
-        "Using no marketing",
-        "Using only radio"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "A film trailer shown on YouTube and in cinemas is an example of:",
-      options: ["Single-platform distribution", "Cross-media promotion", "No distribution", "Print-only advertising"],
-      answerIndex: 1
-    },
-    {
-      q: "Which distribution method gives the audience the MOST control?",
-      options: ["Broadcast TV", "On-demand streaming", "Cinema release", "Physical DVD rental only"],
-      answerIndex: 1
-    },
-    {
-      q: "A key consideration when choosing distribution platforms is:",
-      options: [
-        "The director’s favourite food",
-        "Where the target audience is most likely to access content",
-        "The colour of the logo",
-        "The school timetable"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "One advantage of cinema distribution is:",
-      options: [
-        "Guaranteed global reach",
-        "High-impact large screen experience",
-        "Always free to access",
-        "Instant editing"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "A disadvantage of digital-only distribution can be:",
-      options: [
-        "Needing internet access",
-        "Needing paper",
-        "Being impossible to update",
-        "No audience interaction"
+        "Shot sketches, shot type and camera movement",
+        "Only file formats",
+        "Legal information only",
+        "Colour profiles"
       ],
       answerIndex: 0
     },
     {
-      q: "Which platform is MOST appropriate for a school advertisement aimed at parents?",
+      q: "What does a visualisation diagram show?",
       options: [
-        "Random gaming sites",
-        "Targeted social media and school website",
-        "Cinemas worldwide",
-        "International billboards"
+        "The final timeline of a video",
+        "The layout and appearance of a single still image or graphic",
+        "Audio levels over time",
+        "User test results"
       ],
       answerIndex: 1
     },
     {
-      q: "Physical media such as DVDs are becoming less popular mainly because:",
+      q: "A wireframe is BEST described as:",
       options: [
-        "They are illegal",
-        "Streaming and download options are more convenient",
-        "They cannot show HD video",
-        "They are not compatible with TVs"
+        "A detailed final design",
+        "A basic layout of a web page or app showing structure and position of elements",
+        "A soundtrack plan",
+        "A list of assets"
       ],
       answerIndex: 1
     },
     {
-      q: "Which is the MOST cost-effective distribution option for a small YouTube creator?",
-      options: ["Cinema ads", "Prime-time TV slots", "Uploading videos online", "Full-page newspaper adverts"],
+      q: "Which pre-production document is MOST suitable to plan a website’s page layout?",
+      options: ["Storyboard", "Wireframe", "Script", "Risk assessment"],
+      answerIndex: 1
+    },
+    {
+      q: "Which item is MOST likely to appear on a storyboard panel?",
+      options: [
+        "Sketch of the frame",
+        "Budget spreadsheet",
+        "HTML code",
+        "Hardware list"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Annotations on a storyboard are used to:",
+      options: [
+        "Decorate the drawing",
+        "Explain camera movement, transitions and sound",
+        "Show export settings",
+        "Write file names only"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Visualisation diagrams are commonly used for:",
+      options: [
+        "Planning poster designs and DVD covers",
+        "Audio production only",
+        "Legal documents",
+        "Testing websites"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "A wireframe normally does NOT include:",
+      options: ["Real imagery and final colours", "Navigation menus", "Content boxes", "Logo position"],
+      answerIndex: 0
+    },
+    {
+      q: "Storyboards help the production team because they:",
+      options: [
+        "Reduce the need for actors",
+        "Provide a visual plan of each shot before filming",
+        "Automatically film the scenes",
+        "Replace the script"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which of the following information is LEAST important on a storyboard?",
+      options: ["Shot number", "Shot type", "Colour profile of the camera", "Description of action"],
       answerIndex: 2
     },
     {
-      q: "Apps and mobile games are usually distributed via:",
-      options: ["App stores", "Posters", "Radio", "Billboards"],
-      answerIndex: 0
-    },
-    {
-      q: "Using QR codes on posters is a way to:",
+      q: "A visualisation diagram for a magazine cover is likely to show:",
       options: [
-        "Link physical and digital distribution",
-        "Increase printing time",
-        "Avoid online content",
-        "Change the file format"
+        "Placement of masthead, images and cover lines",
+        "Camera framing for shots",
+        "Video transitions",
+        "Full article text"
       ],
       answerIndex: 0
     },
     {
-      q: "The term ‘windowing’ in media distribution refers to:",
+      q: "Wireframes support responsive design by:",
       options: [
-        "Editing video",
-        "Releasing content on different platforms at different times",
-        "Changing fonts",
-        "Cropping images"
+        "Showing approximate layout for different screen sizes",
+        "Exporting code automatically",
+        "Recording analytics",
+        "Changing camera angles"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Which pre-production document is best for planning a TV advert?",
+      options: ["Wireframe", "Storyboard", "Mood board only", "Asset log"],
+      answerIndex: 1
+    },
+    {
+      q: "Storyboards frequently use which format?",
+      options: ["Paragraphs only", "A sequence of numbered frames", "Audio-only notes", "Code blocks"],
+      answerIndex: 1
+    },
+    {
+      q: "Visualisation diagrams are MOST useful for:",
+      options: [
+        "Showing the layout idea for a single screen or page",
+        "Recording test results",
+        "Scheduling tasks",
+        "Writing dialogue"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "A wireframe must clearly show:",
+      options: [
+        "Precise colours and fonts",
+        "Where key elements such as headers, images and buttons will go",
+        "Exact wording of all text",
+        "Final audio mix"
       ],
       answerIndex: 1
     },
     {
-      q: "Overall, the main goal when choosing distribution platforms is to:",
+      q: "Which advantage do storyboards provide?",
       options: [
-        "Spend as much money as possible",
-        "Reach the target audience effectively and efficiently",
-        "Use every platform available regardless of audience",
-        "Avoid feedback"
+        "They guarantee no reshoots",
+        "They reduce confusion on set by providing a shared visual plan",
+        "They replace camera equipment",
+        "They remove the need for actors"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "On a storyboard, arrows around the camera indicate:",
+      options: [
+        "Lighting changes",
+        "Camera movement such as pan or tilt",
+        "Script changes",
+        "Audio level"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Visualisation diagrams are often created:",
+      options: ["During distribution", "During early design and planning", "After filming", "After user testing"],
+      answerIndex: 1
+    },
+    {
+      q: "Wireframes help developers because they:",
+      options: [
+        "Provide a clear structure to build from before detailed design",
+        "Control server access",
+        "Mix audio automatically",
+        "Allocate budgets"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Which of these would you MOST expect to see on a storyboard for an advert?",
+      options: [
+        "List of fonts",
+        "Shot sketches with action and dialogue notes",
+        "CSS code",
+        "Asset log IDs"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Why are visualisation diagrams shown to clients?",
+      options: [
+        "To finalise legal contracts",
+        "To check they like the proposed visual layout before full production",
+        "To confirm export formats",
+        "To demonstrate code quality"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which document would be BEST to show how a mobile app screen layout changes between pages?",
+      options: ["Storyboard", "Wireframe", "Script", "Risk assessment"],
+      answerIndex: 1
+    },
+    {
+      q: "Storyboards, visualisation diagrams and wireframes are all used for:",
+      options: [
+        "Final distribution",
+        "Pre-production planning and communication of ideas",
+        "Audience testing only",
+        "Encoding files"
       ],
       answerIndex: 1
     }
   ]
 },
 
+    legalProtectIndividuals: {
+  id: "legalProtectIndividuals",
+  label: "26 – Legal Considerations to Protect Individuals",
+  questions: [
+    {
+      q: "Data protection laws (such as GDPR) mainly exist to:",
+      options: [
+        "Allow companies to sell any personal data",
+        "Protect individuals’ personal data from misuse",
+        "Ban all online services",
+        "Remove copyright"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which of the following counts as personal data?",
+      options: [
+        "A made-up username with no link to a person",
+        "Someone’s name and email address stored in a database",
+        "A random landscape photo",
+        "A fictional character’s name"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A consent form or release form is used so that:",
+      options: [
+        "Crew can ignore safety rules",
+        "Contributors give permission for their image, voice or work to be used",
+        "The project can skip planning",
+        "No one knows how footage will be used"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Defamation occurs when a media product:",
+      options: [
+        "Praises someone",
+        "Unfairly damages a person’s reputation with false statements",
+        "Uses bright colours",
+        "Contains a soundtrack"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Privacy laws affect media productions because:",
+      options: [
+        "They stop all filming",
+        "Filmmakers must be careful when recording people in private spaces or using personal information",
+        "They only apply to newspapers",
+        "They only apply to audio"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "When filming in a public place, producers should:",
+      options: [
+        "Assume everyone is happy to be filmed",
+        "Seek permission where needed and avoid identifying individuals without consent where required",
+        "Ignore all signs",
+        "Never tell anyone what they are doing"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Storing audience research data securely is important because:",
+      options: [
+        "It is optional",
+        "It protects individuals from identity theft and misuse of their information",
+        "It reduces file sizes",
+        "It avoids all planning"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which situation BEST shows good practice?",
+      options: [
+        "Uploading photos of students without informing them",
+        "Using signed consent forms before publishing interview footage",
+        "Sharing personal data with random companies",
+        "Keeping passwords written on a public noticeboard"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "If a company breaks data protection laws, a possible consequence is:",
+      options: [
+        "More followers on social media",
+        "Fines, legal action and damage to reputation",
+        "Better exam results",
+        "Free advertising"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Legal considerations to protect individuals should be thought about:",
+      options: [
+        "Only after the product is released",
+        "Throughout pre-production, production and post-production",
+        "Only on exam day",
+        "Only in post-production"
+      ],
+      answerIndex: 1
+    }
+  ]
+},
 
-
-intellectualPropertyRights: {
+    intellectualPropertyRights: {
   id: "intellectualPropertyRights",
   label: "27 – Intellectual Property Rights",
   questions: [
@@ -2754,466 +4076,7 @@ intellectualPropertyRights: {
   ]
 },
 
-
-creativeJobRoles: {
-  id: "creativeJobRoles",
-  label: "07 – Creative Job Roles",
-  questions: [
-    {
-      q: "A graphic designer is mainly responsible for:",
-      options: [
-        "Network maintenance",
-        "Creating visual designs such as posters and logos",
-        "Writing legal contracts",
-        "Managing budgets"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "A scriptwriter’s primary task is to:",
-      options: [
-        "Operate cameras on set",
-        "Write dialogue, scenes and narrative structure",
-        "Design websites",
-        "Mix audio tracks"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "A concept artist is usually involved in:",
-      options: [
-        "Creating early visual ideas for characters, environments or products",
-        "Managing social media adverts",
-        "Editing the final video",
-        "Testing software"
-      ],
-      answerIndex: 0
-    },
-    {
-      q: "Which creative role is MOST responsible for deciding the visual style of a film?",
-      options: [
-        "Network technician",
-        "Director",
-        "Sound engineer",
-        "Database administrator"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "A copywriter’s job is to:",
-      options: [
-        "Write persuasive text for adverts and websites",
-        "Edit audio",
-        "Design logos",
-        "Test camera equipment"
-      ],
-      answerIndex: 0
-    },
-    {
-      q: "Which role would normally design the layout and imagery for a magazine cover?",
-      options: ["Graphic designer", "Camera operator", "Sound designer", "Network engineer"],
-      answerIndex: 0
-    },
-    {
-      q: "An illustrator is primarily involved in:",
-      options: [
-        "Drawing and creating bespoke artworks",
-        "Planning budgets",
-        "Configuring routers",
-        "Editing code"
-      ],
-      answerIndex: 0
-    },
-    {
-      q: "A social media content creator typically:",
-      options: [
-        "Designs CPU chips",
-        "Creates short-form digital content and posts for social platforms",
-        "Edits only radio shows",
-        "Writes user manuals for printers"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "Which of the following is a creative responsibility of a game designer?",
-      options: [
-        "Building the console hardware",
-        "Designing gameplay mechanics, levels and player experience",
-        "Managing electricity supply",
-        "Running the school network"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "A storyboard artist’s key task is to:",
-      options: [
-        "Write dialogue",
-        "Draw shot-by-shot panels to visualise scenes",
-        "Design websites",
-        "Perform quality assurance testing"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "Which role is MOST likely to decide how actors perform each scene?",
-      options: ["Director", "Graphic designer", "Web developer", "Sound operator"],
-      answerIndex: 0
-    },
-    {
-      q: "A creative director in an advertising agency is usually responsible for:",
-      options: [
-        "Maintaining the building",
-        "Leading the overall creative vision for campaigns",
-        "Installing software",
-        "Approving all IT purchases"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "Which creative role focuses on designing the user interface and experience?",
-      options: ["Database admin", "UI/UX designer", "Network manager", "Camera assistant"],
-      answerIndex: 1
-    },
-    {
-      q: "A photographer’s main creative tasks include:",
-      options: [
-        "Editing code",
-        "Capturing images, composing shots and choosing lighting",
-        "Licensing music",
-        "Writing contracts"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "Which of the following is a typical skill for a creative media job role?",
-      options: [
-        "Strong visual design and storytelling skills",
-        "Ability to wire network cabinets only",
-        "Knowledge of building regulations only",
-        "No teamwork skills"
-      ],
-      answerIndex: 0
-    },
-    {
-      q: "An animator’s job is to:",
-      options: [
-        "Shoot live-action footage only",
-        "Create moving images using drawings, 3D models or digital assets",
-        "Maintain databases",
-        "Write radio news scripts"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "Which role would be MOST involved in selecting colour palettes and typography?",
-      options: ["Sound editor", "Graphic designer", "Network engineer", "Lighting technician"],
-      answerIndex: 1
-    },
-    {
-      q: "A creative media job role usually requires the ability to:",
-      options: [
-        "Work alone with no feedback",
-        "Collaborate with others and respond to client briefs",
-        "Install operating systems",
-        "Configure firewalls only"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "Which creative role might design the visual brand identity for a new app?",
-      options: [
-        "Brand designer/graphic designer",
-        "Database manager",
-        "Network technician",
-        "Audio engineer"
-      ],
-      answerIndex: 0
-    },
-    {
-      q: "One responsibility of a film director is to:",
-      options: [
-        "Control lighting only",
-        "Guide the artistic and dramatic aspects of the film",
-        "Write all contracts",
-        "Print posters"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "A creative job role where you design and draw characters for animation or games is:",
-      options: ["Systems analyst", "Character designer", "Printer technician", "IT support"],
-      answerIndex: 1
-    },
-    {
-      q: "Why is a portfolio important for creative job roles?",
-      options: [
-        "Shows evidence of past creative work and skills",
-        "Stores passwords",
-        "Shows attendance",
-        "Lists exam marks only"
-      ],
-      answerIndex: 0
-    },
-    {
-      q: "Which role is MOST likely to work closely with a scriptwriter?",
-      options: ["Camera repair technician", "Director", "Network admin", "IT trainer"],
-      answerIndex: 1
-    },
-    {
-      q: "When responding to a client brief, a creative professional must:",
-      options: [
-        "Ignore all requirements",
-        "Produce ideas that meet the client’s aims and target audience",
-        "Set their own unrelated goals",
-        "Avoid any communication"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "Overall, creative job roles in media focus on:",
-      options: [
-        "Technical infrastructure only",
-        "Generating and shaping ideas into engaging media products",
-        "Managing power supplies",
-        "Installing Wi-Fi routers"
-      ],
-      answerIndex: 1
-    }
-  ]
-},
-
-
-
-technicalJobRoles: {
-  id: "technicalJobRoles",
-  label: "08 – Technical Job Roles",
-  questions: [
-    {
-      q: "A camera operator’s main responsibility is to:",
-      options: [
-        "Write scripts",
-        "Capture footage using cameras following the director’s instructions",
-        "Design logos",
-        "Record sound only"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "A video editor mainly:",
-      options: [
-        "Chooses actors",
-        "Assembles, trims and combines footage to create a finished sequence",
-        "Designs the cinema",
-        "Writes the soundtrack"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "A sound engineer is responsible for:",
-      options: [
-        "Lighting the set",
-        "Recording and mixing audio to a high quality",
-        "Designing fonts",
-        "Operating drones"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "Which technical role controls the lighting setup on a film set?",
-      options: ["Lighting technician", "Scriptwriter", "Graphic artist", "Producer"],
-      answerIndex: 0
-    },
-    {
-      q: "A web developer’s job is to:",
-      options: [
-        "Write and maintain website code and functionality",
-        "Act in front of camera",
-        "Mix sound for radio",
-        "Write print articles"
-      ],
-      answerIndex: 0
-    },
-    {
-      q: "A broadcast technician typically works with:",
-      options: [
-        "Cameras only",
-        "Equipment used to transmit radio and TV signals",
-        "Game controllers",
-        "Social media posts"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "Which technical role ensures that all IT systems for a production are working correctly?",
-      options: ["Network administrator", "Graphic designer", "Animator", "Copywriter"],
-      answerIndex: 0
-    },
-    {
-      q: "A 3D modeller’s technical role is to:",
-      options: [
-        "Write scripts",
-        "Create three-dimensional digital models for games, films or VR",
-        "Operate boom microphones",
-        "Design posters"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "A VFX (visual effects) artist mainly:",
-      options: [
-        "Edits the script",
-        "Creates computer-generated imagery and effects to enhance footage",
-        "Manages budgets",
-        "Directs actors"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "The role of a systems administrator includes:",
-      options: [
-        "Writing articles",
-        "Maintaining servers, user accounts and network security",
-        "Acting on screen",
-        "Editing videos"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "Which technical role prepares, tests and operates microphones on a set?",
-      options: ["Lighting assistant", "Boom operator / sound assistant", "Storyboard artist", "Producer"],
-      answerIndex: 1
-    },
-    {
-      q: "A technician responsible for setting up projectors, screens and sound in a cinema is:",
-      options: ["Projectionist", "Copywriter", "Director", "Camera operator"],
-      answerIndex: 0
-    },
-    {
-      q: "A QA (quality assurance) tester in a games company is responsible for:",
-      options: [
-        "Designing characters",
-        "Finding and reporting bugs and issues in the game",
-        "Writing music",
-        "Filming cutscenes"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "Which technical role would be MOST involved in adjusting colour grading in post-production?",
-      options: ["Sound editor", "Colourist", "Camera assistant", "Lighting technician"],
-      answerIndex: 1
-    },
-    {
-      q: "A database administrator in a media company would mainly:",
-      options: [
-        "Create movie trailers",
-        "Manage data storage, backup and organisation",
-        "Edit posters",
-        "Record podcasts"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "A technical director in a live TV production:",
-      options: [
-        "Draws storyboards",
-        "Operates the vision mixing desk and coordinates technical crew",
-        "Writes scripts",
-        "Acts in the show"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "Why are technical job roles vital in media production?",
-      options: [
-        "They handle the legal contracts",
-        "They ensure the equipment and technology function correctly and reliably",
-        "They replace creative staff",
-        "They manage school timetables"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "The person responsible for setting up and maintaining studio cameras is usually the:",
-      options: ["Camera operator or studio camera technician", "Graphic designer", "Copywriter", "Marketing manager"],
-      answerIndex: 0
-    },
-    {
-      q: "Which technical role would handle streaming a live event online?",
-      options: [
-        "Lighting designer",
-        "Streaming/broadcast technician",
-        "Illustrator",
-        "Script editor"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "A Foley artist works on:",
-      options: [
-        "Creating and recording sound effects in sync with visuals",
-        "Grading colours",
-        "Designing websites",
-        "Editing scripts"
-      ],
-      answerIndex: 0
-    },
-    {
-      q: "A technical job role often requires:",
-      options: [
-        "Strong practical skills with hardware and software",
-        "No knowledge of technology",
-        "Only drawing skills",
-        "Only acting skills"
-      ],
-      answerIndex: 0
-    },
-    {
-      q: "Which role might work closely with a sound engineer?",
-      options: [
-        "Animator only",
-        "Director and music composer",
-        "Printer operator",
-        "Camera repairer only"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "What is a key responsibility of an IT support technician in a media organisation?",
-      options: [
-        "Choosing actors",
-        "Fixing hardware and software issues for staff",
-        "Writing scripts",
-        "Mixing audio"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "Technical job roles differ from creative roles mainly because they:",
-      options: [
-        "Focus on visual design only",
-        "Focus on operating and maintaining the technical systems used in production",
-        "Never work in teams",
-        "Do not need training"
-      ],
-      answerIndex: 1
-    },
-    {
-      q: "Overall, technical job roles in media ensure that:",
-      options: [
-        "Creative ideas can be realised using the right tools and technology",
-        "No planning is required",
-        "Only paper documents are used",
-        "All products are identical"
-      ],
-      answerIndex: 0
-    }
-  ]
-},
-
-
-
-regulationClassification: {
+    regulationClassification: {
   id: "regulationClassification",
   label: "28 – Regulation, Certification & Classification",
   questions: [
@@ -3435,8 +4298,413 @@ regulationClassification: {
   ]
 },
 
+    healthSafety: {
+  id: "healthSafety",
+  label: "29 – Health & Safety",
+  questions: [
+    {
+      q: "A hazard on a film set is best described as:",
+      options: [
+        "Something with no risk at all",
+        "Anything that could potentially cause harm, like loose cables",
+        "A finished edit",
+        "Only weather conditions"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A risk assessment is a document that:",
+      options: [
+        "Lists only the cast",
+        "Identifies hazards and explains how risks will be reduced or controlled",
+        "Designs the poster",
+        "Calculates box-office figures"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A recce (reconnaissance) is:",
+      options: [
+        "A final screening",
+        "A visit to a location before filming to check suitability and risks",
+        "A type of microphone",
+        "A script rewrite"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "One common hazard when filming on location is:",
+      options: [
+        "Trip hazards from cables and equipment",
+        "Too many scripts",
+        "Having a storyboard",
+        "Using a tripod"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "The Health and Safety at Work Act requires employers to:",
+      options: [
+        "Ignore hazards",
+        "Protect workers and the public as far as is reasonably practicable",
+        "Only protect managers",
+        "Avoid training staff"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Display Screen Equipment regulations focus on:",
+      options: [
+        "Safe use of computers and screens to prevent strain and injury",
+        "Only camera cranes",
+        "Only location filming",
+        "Lighting design"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Which is an example of good workstation practice?",
+      options: [
+        "Hunched posture and no breaks",
+        "Adjusting chair height, screen angle and taking regular breaks",
+        "Working in complete darkness",
+        "Balancing the monitor on a pile of boxes"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Why must risk assessments be recorded and reviewed?",
+      options: [
+        "To decorate the office",
+        "So risks are documented, responsibilities are clear and safety can be monitored over time",
+        "To avoid using equipment",
+        "So nobody has to think about safety again"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "When working with heavy equipment, staff should:",
+      options: [
+        "Ignore lifting techniques",
+        "Use correct manual handling methods or lifting aids",
+        "Run while carrying cameras",
+        "Store kit in doorways"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "The main reason for following health and safety procedures is to:",
+      options: [
+        "Slow down production",
+        "Reduce accidents and protect cast, crew and the public",
+        "Spend more money",
+        "Avoid using PPE"
+      ],
+      answerIndex: 1
+    }
+  ]
+},
 
-imageFiles: {
+    distributionPlatformsMedia: {
+  id: "distributionPlatformsMedia",
+  label: "30 – Distribution Platforms & Media",
+  questions: [
+    {
+      q: "Distribution in media refers to:",
+      options: [
+        "Editing footage",
+        "How the product is delivered to the audience",
+        "Creating scripts",
+        "Designing logos"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which of the following is a digital distribution platform?",
+      options: ["Cinema only", "Streaming services like Netflix", "Printed posters", "Billboards"],
+      answerIndex: 1
+    },
+    {
+      q: "Physical distribution of media includes:",
+      options: ["DVDs and Blu-ray discs", "Social media posts", "Websites", "Streaming apps"],
+      answerIndex: 0
+    },
+    {
+      q: "An advantage of online distribution is:",
+      options: [
+        "Very limited reach",
+        "Global access and on-demand viewing",
+        "Fixed schedule only",
+        "No interactivity"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which platform is best suited for short, viral video content?",
+      options: ["Radio", "TikTok", "Print magazines", "Billboards"],
+      answerIndex: 1
+    },
+    {
+      q: "Which distribution platform would be MOST suitable for an independent short film to reach a global audience?",
+      options: ["Local newspaper", "International streaming or video-sharing site", "School noticeboard", "Bus stop poster"],
+      answerIndex: 1
+    },
+    {
+      q: "Simultaneous release of a film in cinemas and on streaming is known as:",
+      options: ["Single-platform release", "Multi-platform release", "Print-only release", "Local-only release"],
+      answerIndex: 1
+    },
+    {
+      q: "Which is a disadvantage of physical distribution?",
+      options: [
+        "Takes up space and costs money to produce",
+        "No printing required",
+        "Instant updates",
+        "Easy global reach"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Broadcast distribution includes:",
+      options: ["Radio and TV channels", "USB drives", "Posters", "Leaflets"],
+      answerIndex: 0
+    },
+    {
+      q: "On-demand distribution allows users to:",
+      options: [
+        "Watch only at scheduled times",
+        "Choose when and where to access content",
+        "Only access in cinemas",
+        "Use DVDs only"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Social media is a powerful distribution platform because it:",
+      options: [
+        "Has no analytics",
+        "Encourages sharing and interaction",
+        "Cannot be used on phones",
+        "Is always offline"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A podcast is typically distributed via:",
+      options: ["Streaming and download platforms", "Printed booklets", "Cinemas", "Posters"],
+      answerIndex: 0
+    },
+    {
+      q: "Which of the following describes cross-media distribution?",
+      options: [
+        "Using only one channel",
+        "Using multiple platforms such as TV, social media and print together",
+        "Using no marketing",
+        "Using only radio"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A film trailer shown on YouTube and in cinemas is an example of:",
+      options: ["Single-platform distribution", "Cross-media promotion", "No distribution", "Print-only advertising"],
+      answerIndex: 1
+    },
+    {
+      q: "Which distribution method gives the audience the MOST control?",
+      options: ["Broadcast TV", "On-demand streaming", "Cinema release", "Physical DVD rental only"],
+      answerIndex: 1
+    },
+    {
+      q: "A key consideration when choosing distribution platforms is:",
+      options: [
+        "The director’s favourite food",
+        "Where the target audience is most likely to access content",
+        "The colour of the logo",
+        "The school timetable"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "One advantage of cinema distribution is:",
+      options: [
+        "Guaranteed global reach",
+        "High-impact large screen experience",
+        "Always free to access",
+        "Instant editing"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "A disadvantage of digital-only distribution can be:",
+      options: [
+        "Needing internet access",
+        "Needing paper",
+        "Being impossible to update",
+        "No audience interaction"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Which platform is MOST appropriate for a school advertisement aimed at parents?",
+      options: [
+        "Random gaming sites",
+        "Targeted social media and school website",
+        "Cinemas worldwide",
+        "International billboards"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Physical media such as DVDs are becoming less popular mainly because:",
+      options: [
+        "They are illegal",
+        "Streaming and download options are more convenient",
+        "They cannot show HD video",
+        "They are not compatible with TVs"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which is the MOST cost-effective distribution option for a small YouTube creator?",
+      options: ["Cinema ads", "Prime-time TV slots", "Uploading videos online", "Full-page newspaper adverts"],
+      answerIndex: 2
+    },
+    {
+      q: "Apps and mobile games are usually distributed via:",
+      options: ["App stores", "Posters", "Radio", "Billboards"],
+      answerIndex: 0
+    },
+    {
+      q: "Using QR codes on posters is a way to:",
+      options: [
+        "Link physical and digital distribution",
+        "Increase printing time",
+        "Avoid online content",
+        "Change the file format"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "The term ‘windowing’ in media distribution refers to:",
+      options: [
+        "Editing video",
+        "Releasing content on different platforms at different times",
+        "Changing fonts",
+        "Cropping images"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Overall, the main goal when choosing distribution platforms is to:",
+      options: [
+        "Spend as much money as possible",
+        "Reach the target audience effectively and efficiently",
+        "Use every platform available regardless of audience",
+        "Avoid feedback"
+      ],
+      answerIndex: 1
+    }
+  ]
+},
+
+    fileCompression: {
+  id: "fileCompression",
+  label: "31 – File Compression",
+  questions: [
+    {
+      q: "File compression is:",
+      options: [
+        "Making files larger",
+        "Reducing file size so they take up less storage or are quicker to transfer",
+        "Deleting files permanently",
+        "Renaming a file only"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Lossless compression means that:",
+      options: [
+        "Some data is permanently removed",
+        "All original data can be restored exactly when the file is decompressed",
+        "The file cannot be opened",
+        "Quality always gets worse"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Lossy compression means that:",
+      options: [
+        "No data is lost",
+        "Some data is discarded to achieve higher compression, reducing quality",
+        "The file becomes a ZIP",
+        "The file is always text"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Which of these formats commonly uses LOSSY compression?",
+      options: ["BMP image", "RAW photo", "JPEG image", "Uncompressed WAV"],
+      answerIndex: 2
+    },
+    {
+      q: "Which of these formats is usually LOSSLESS?",
+      options: ["ZIP archive", "Low-bit-rate MP3", "Heavily compressed JPEG", "MPEG-2 video"],
+      answerIndex: 0
+    },
+    {
+      q: "A main advantage of lossy compression is that:",
+      options: [
+        "File sizes can be significantly smaller for streaming and downloading",
+        "Quality always improves",
+        "Files can never be played",
+        "It only works on text"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "A key disadvantage of lossy compression is that:",
+      options: [
+        "Files cannot be copied",
+        "Removed data and quality cannot be fully recovered",
+        "Files take more storage space",
+        "It never works on images"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Why might a media producer choose lossless compression for an audio master file?",
+      options: [
+        "To save as much space as possible regardless of quality",
+        "To keep full quality for editing and archiving",
+        "Because it cannot be opened",
+        "Because it removes important frequencies"
+      ],
+      answerIndex: 1
+    },
+    {
+      q: "Compression is particularly important when:",
+      options: [
+        "Uploading large video files for online distribution",
+        "Using only paper documents",
+        "Drawing storyboards",
+        "Writing scripts"
+      ],
+      answerIndex: 0
+    },
+    {
+      q: "Overall, the choice between lossy and lossless compression should be based on:",
+      options: [
+        "Random preference",
+        "The required quality and how the media will be used or delivered",
+        "How colourful the logo is",
+        "Which file name sounds better"
+      ],
+      answerIndex: 1
+    }
+  ]
+},
+
+    imageFiles: {
   id: "imageFiles",
   label: "32 – Image Files",
   questions: [
@@ -3623,9 +4891,7 @@ imageFiles: {
   ]
 },
 
-
-
-audioFiles: {
+    audioFiles: {
   id: "audioFiles",
   label: "33 – Audio Files",
   questions: [
@@ -3827,8 +5093,7 @@ audioFiles: {
   ]
 },
 
-
-movingImageFiles: {
+    movingImageFiles: {
   id: "movingImageFiles",
   label: "34 – Moving Image Files",
   questions: [
@@ -4045,8 +5310,7 @@ movingImageFiles: {
   ]
 },
 
-
-movingImageFiles: {
+    movingImageFiles: {
   id: "movingImageFiles",
   label: "34 – Moving Image Files",
   questions: [
@@ -4263,8 +5527,7 @@ movingImageFiles: {
   ]
 },
 
-
-hardwareSoftware: {
+    hardwareSoftware: {
   id: "hardwareSoftware",
   label: "35 – Hardware & Software",
   questions: [
@@ -4460,6 +5723,4 @@ hardwareSoftware: {
     }
   ]
 }
-    };
-
-    
+};
